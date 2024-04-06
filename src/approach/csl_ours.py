@@ -16,10 +16,6 @@ import cv2
 
 
 class Appr(Inc_Learning_Appr):
-    """Class implementing the Incremental Classifier and Representation Learning (iCaRL) approach
-    described in https://arxiv.org/abs/1611.07725
-    Original code available at https://github.com/srebuffi/iCaRL
-    """
     def __init__(self, server_model, client_model, device, nepochs=60, lr=0.5, lr_min=1e-4, lr_factor=3, lr_patience=5, clipgrad=10000,
                  momentum=0.9, wd=1e-5, multi_softmax=False, wu_nepochs=0, wu_lr_factor=1, fix_bn=False,
                  eval_on_train=False, exem_batch_size=128, logger=None, exemplars_dataset=None, lamb=1):
@@ -29,12 +25,11 @@ class Appr(Inc_Learning_Appr):
         self.server_model_old = None
         self.client_model_old = None
         self.total_exem_info = []
-        
         self.prev_classes = []
         
         have_exemplars = self.exemplars_dataset.max_num_exemplars + self.exemplars_dataset.max_num_exemplars_per_class
         if not have_exemplars:
-            warnings.warn("Warning: iCaRL is expected to use exemplars. Check documentation.")
+            warnings.warn("Warning: PRCSL is expected to use exemplars. Check documentation.")
             
         self.nepochs_finetuning = 20
         self._after_train = False
@@ -51,8 +46,9 @@ class Appr(Inc_Learning_Appr):
                             help='Forgetting-intransigence trade-off (default=%(default)s)')
         return parser.parse_known_args(args)
 
-    # NME Classification
+    
     def classify(self, task, features, targets):
+        """NME Classification"""
         # Expand means to all batch images
         means = torch.stack(self.exemplar_means)
         means = torch.stack([means] * features.shape[0])
@@ -76,7 +72,7 @@ class Appr(Inc_Learning_Appr):
         return hits_taw, hits_tag
 
     def compute_mean_of_exemplars(self, trn_loader, transform, fix_prev):
-        # Change transforms to evaluation for this calculation
+        """Change transforms to evaluation for this calculation"""
         with override_dataset_transform(self.exemplars_dataset, transform) as _ds:
             # Change dataloader so it can be fixed to go sequentially (shuffle=False), this allows to keep same order
             icarl_loader = DataLoader(_ds, batch_size=trn_loader.batch_size, shuffle=False,
@@ -131,7 +127,6 @@ class Appr(Inc_Learning_Appr):
                         
                 print(f"{i} client data, label len: ", len(new_client_dataloader[i][0].dataset.images), len(new_client_dataloader[i][0].dataset.labels))
         
-        print("Task Finetuning")
         super().train_loop(t, new_client_dataloader, client_models)
         
         self.nepochs = orig_nepochs

@@ -47,25 +47,15 @@ class Appr(Inc_Learning_Appr):
     # Algorithm 1: iCaRL NCM Classify
     def classify(self, task, features, targets):
         # expand means to all batch images
-#         print(self.exemplar_means)
         means = torch.stack(self.exemplar_means)
-#         print("means: ", means.shape)
         means = torch.stack([means] * features.shape[0])
-#         print("means stack: ", means.shape)
         means = means.transpose(1, 2)
-#         print("means transpose(1,2): ", means.shape)
         # expand all features to all classes
-#         print("features: ", features.shape)
         features = features / features.norm(dim=1).view(-1, 1)
-#         print("norm features: ", features.shape)
         features = features.unsqueeze(2)
-#         print("features unsqueeze(2): ", features.shape)
         features = features.expand_as(means)
-#         print("features expand as means: ", features.shape)
         # get distances for all images to all exemplar class means -- nearest prototype
         dists = (features - means).pow(2).sum(1).squeeze()
-#         print("dists: ", dists.shape)
-#         exit(True)
         # Task-Aware Multi-Head
         num_cls = self.model.task_cls[task]
         offset = self.model.task_offset[task]
@@ -199,13 +189,3 @@ class Appr(Inc_Learning_Appr):
             loss += self.lamb * sum(torch.nn.functional.binary_cross_entropy(g[:, y], q_i[:, y]) for y in
                                     range(sum(self.model.task_cls[:t])))
         return loss
-
-# +
-# total_exem = [(1, 509), (1, 1121), (1, 44), (0, 146), (0, 651), (1, 1167), (1, 275), (0, 683), (0, 351), (1, 526), (0, 0), (1, 255), (1, 455), (1, 874), (0, 1071), (0, 1163), (1, 946), (1, 720), (0, 334), (0, 1186), (1, 829), (0, 1238), (1,1202), (1, 619), (0, 658), (0, 486), (0, 592), (0, 1082), (1, 569), (0, 1132), (0, 1061), (0, 420), (1, 1139), (0, 995), (0, 142), (1, 1208), (1, 196), (0, 437), (1, 1289), (0, 383), (0, 234), (1, 456), (0, 252), (0, 1046), (0, 364), (0, 831), (1, 1315), (1, 796), (1, 1338), (1, 883), (0, 919), (1, 517), (0, 674), (0, 240), (0, 294), (1, 400), (0, 128), (1, 259), (1, 446), (1, 586), (1, 909), (1, 350), (1, 114), (1, 1269), (0, 815), (1, 1306), (0, 967), (0, 869), (0, 751), (1, 342), (1,169), (0, 494), (1, 376), (0, 59), (0, 926), (0, 1131), (0, 251), (0, 1219), (0, 759), (0, 281), (0, 290), (0, 143), (1, 1241), (1, 1239), (1, 1231), (1, 1223), (1, 602), (0, 238), (1, 163), (1, 80), (1, 1005), (0, 1154), (0, 391), (0, 176), (1,286), (0, 1161), (1, 498), (0, 297), (1, 1136), (0, 217), (0, 945), (1, 43), (1, 270), (1, 574), (0, 1340), (1, 773), (0, 1177), (1, 646), (1, 1348), (0, 448), (0, 338), (0, 1233), (0, 42), (0, 1200), (0, 898), (1, 493), (1, 1268), (0, 389), (1,548), (1, 450), (0, 1302), (1, 670), (0, 403), (0, 101), (1, 1283), (0, 887), (1, 856), (0, 639), (0, 1309), (0, 162), (0,716), (1, 1065), (1, 969), (0, 972), (1, 142), (0, 915), (1, 795), (0, 961), (0, 838), (0, 1022), (0, 435), (0, 214), (1, 1048), (1, 772), (1, 398), (1, 463), (1, 214), (1, 651), (1, 1349), (0, 1317), (1, 976), (1, 611), (0, 186), (0, 154), (0, 150), (1, 1125), (0, 1062), (0, 966), (0, 1244), (1, 245), (0, 720), (1, 1227), (0, 978), (1, 537), (1, 482), (1, 352), (0,17), (1, 479), (1, 1168), (0, 397), (0, 48), (0, 712), (1, 488), (1, 361), (1, 252), (1, 676), (1, 219), (0, 512), (1, 1316), (0, 818), (1, 762), (1, 1229), (1, 1173), (1, 318), (0, 1246), (1, 1064), (1, 748), (0, 1315), (0, 428), (0, 1109), (0,399), (0, 1199), (0, 1183), (1, 1154), (1, 12), (1, 336), (0, 39), (0, 392), (1, 399), (1, 495)]
-
-# +
-# print(total_exem)
-
-# +
-# exem_0 = [total_exem[x][1] for x in range(len(total_exem)) if total_exem[x][0] == 0]
-# exem_0
