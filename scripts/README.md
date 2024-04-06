@@ -1,7 +1,7 @@
 # Experiment Scripts 
 In order to facilitate reproducibility of the experiments in
-_**LifeLonger: A Benchmark for Continual Disease
-Classification**_ ([arxiv](https://arxiv.org/pdf/2204.05737.pdf)),
+_**Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning
+*,
 scripts for the main experiments are provided. Their main usage is as follows: 
 
 ```bash
