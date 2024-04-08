@@ -17,10 +17,10 @@ class Appr(Inc_Learning_Appr):
     """
 
     def __init__(self, model, device, nepochs=60, lr=0.5, lr_min=1e-4, lr_factor=3, lr_patience=5, clipgrad=10000,
-                 momentum=0.9, wd=1e-5, multi_softmax=False, wu_nepochs=0, wu_lr_factor=1, fix_bn=False,
+                 momentum=0.9, wd=1e-5, multi_softmax=False, fix_bn=False,
                  eval_on_train=False, logger=None, exemplars_dataset=None, lamb=1):
         super(Appr, self).__init__(model, device, nepochs, lr, lr_min, lr_factor, lr_patience, clipgrad, momentum, wd,
-                                   multi_softmax, wu_nepochs, wu_lr_factor, fix_bn, eval_on_train, logger,
+                                   multi_softmax, fix_bn, eval_on_train, logger,
                                    exemplars_dataset)
         self.model_old = None
         self.lamb = lamb

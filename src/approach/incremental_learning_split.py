@@ -13,7 +13,7 @@ class Inc_Learning_Appr:
     """Basic class for implementing incremental learning approaches"""
 
     def __init__(self, global_server_model, global_client_model, device, nepochs=100, lr=0.05, lr_factor=3, lr_patience=5, clipgrad=10000,
-                 momentum=0, wd=0, multi_softmax=False, wu_nepochs=0, wu_lr_factor=1, fix_bn=False,
+                 momentum=0, wd=0, multi_softmax=False, fix_bn=False,
                  eval_on_train=False, exem_batch_size=128, logger: ExperimentLogger = None, exemplars_dataset: ExemplarsDataset = None):
         self.server_model = global_server_model
         self.client_model = global_client_model
@@ -29,9 +29,6 @@ class Inc_Learning_Appr:
         self.multi_softmax = multi_softmax
         self.logger = logger
         self.exemplars_dataset = exemplars_dataset
-        self.warmup_epochs = wu_nepochs
-        self.warmup_lr = lr * wu_lr_factor
-        self.warmup_loss = torch.nn.CrossEntropyLoss()
         self.fix_bn = fix_bn
         self.eval_on_train = eval_on_train
         self.optimizer = None
@@ -57,13 +54,7 @@ class Inc_Learning_Appr:
         elif self.opt == 'sgd':
             return torch.optim.SGD(self.server_model.parameters(), lr=self.lr, weight_decay=self.wd, momentum=self.momentum)
     
-    def pre_train_process(self, t):
-        """Runs before training all epochs of the task (before the train session)"""
-        return None
-    
     def train(self, t, client_loaders, taskcla):
-        self.pre_train_process(t)
-
         # Global client model initialization
         client_models = []
         for i in range(len(client_loaders)):
