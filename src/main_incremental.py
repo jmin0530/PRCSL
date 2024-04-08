@@ -93,10 +93,6 @@ def main(argv=None):
                         help='Momentum factor (default=%(default)s)')
     parser.add_argument('--weight-decay', default=0.0, type=float, required=False,
                         help='Weight decay (L2 penalty) (default=%(default)s)')
-    parser.add_argument('--warmup-nepochs', default=0, type=int, required=False,
-                        help='Number of warm-up epochs (default=%(default)s)')
-    parser.add_argument('--warmup-lr-factor', default=1.0, type=float, required=False,
-                        help='Warm-up learning rate factor (default=%(default)s)')
     parser.add_argument('--multi-softmax', action='store_true',
                         help='Apply separate softmax for each task (default=%(default)s)')
     parser.add_argument('--fix-bn', action='store_true',
@@ -109,8 +105,7 @@ def main(argv=None):
     args.results_path = os.path.expanduser(args.results_path)
     base_kwargs = dict(nepochs=args.nepochs, lr=args.lr, lr_factor=args.lr_factor,
                        lr_patience=args.lr_patience, clipgrad=args.clipping, momentum=args.momentum,
-                       wd=args.weight_decay, multi_softmax=args.multi_softmax, wu_nepochs=args.warmup_nepochs,
-                       wu_lr_factor=args.warmup_lr_factor, fix_bn=args.fix_bn, eval_on_train=args.eval_on_train)
+                       wd=args.weight_decay, multi_softmax=args.multi_softmax, fix_bn=args.fix_bn, eval_on_train=args.eval_on_train)
 
     if args.no_cudnn_deterministic:
         print('WARNING: CUDNN Deterministic will be disabled.')
