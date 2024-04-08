@@ -119,10 +119,6 @@ def main(argv=None):
                         help='DP mean batch')
     parser.add_argument('--fix-prev', action='store_true',
                         help='Fix previous class exemplar feature means')
-    parser.add_argument('--data-balance-class', action='store_true',
-                        help='Curr task data nums = total exemplar nums')
-    parser.add_argument('--data-balance-random', action='store_true',
-                        help='Curr task data nums = total exemplar nums')
 
     # Args
     args, extra_args = parser.parse_known_args(argv)
@@ -157,7 +153,7 @@ def main(argv=None):
     else:
         input_channel = 3
         
-    # model initialization
+    # Model initialization
     if args.datasets == ['cch5000'] or args.datasets == ['ham10000']:
         print("Network: ResNet18_split")
         init_server_model = ResNet18_server_side(Basicblock_resnet18, [2,2,2]).to(device)
@@ -196,7 +192,6 @@ def main(argv=None):
 
 
     assert len(extra_args) == 0, "Unused args: {}".format(' '.join(extra_args))
-    ####################################################################################################################
 
     # Log all arguments
     full_exp_name = reduce((lambda x, y: x[0] + y[0]), args.datasets) if len(args.datasets) > 0 else args.datasets[0]
@@ -225,34 +220,29 @@ def main(argv=None):
     appr = Appr(global_server_net, global_client_net, device, **appr_kwargs)
 
     # Loop tasks
-    print("taskcla: ", taskcla)
+    print("Taskcla: ", taskcla)
     acc_taw = np.zeros((max_task, max_task))
     acc_tag = np.zeros((max_task, max_task))
     forg_taw = np.zeros((max_task, max_task))
     forg_tag = np.zeros((max_task, max_task))
-
-    all_labels = []
     
+    # Train arguments
     appr.opt = args.opt
     appr.lamb = args.lamb_distill
     appr.ewc_lamb = args.lamb_distill_ewc
     appr.mas_lamb = args.lamb_distill_mas
     appr.exem_per_class = getattr(appr_exemplars_dataset_args, "num_exemplars_per_class")
-    appr.dataset = args.datasets[0]
-    appr.seed = args.seed
     
     # DP hyperparameters
     appr.epsilon = args.epsilon
     appr.dp_mean_batch = args.dp_mean_batch
     appr.fix_prev = args.fix_prev
-    appr.data_balance_class = args.data_balance_class
-    appr.data_balance_random = args.data_balance_random
     appr.lr_finetune_factor = args.lr_finetune_factor
     
-    # number of clients per task
+    # Number of clients per task
     num_clients = [args.nclients for _ in range(args.num_tasks)]
     assert len(num_clients) == args.num_tasks, 'args.num_tasks should equal to len(num_clients)!!'
-    print("number of clients each task: ", num_clients)
+    print("Number of clients each task: ", num_clients)
     
     previous_client_loaders = []
     

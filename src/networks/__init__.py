@@ -3,7 +3,7 @@ from torchvision import models
 # from .lenet import LeNet
 # from .vggnet import VggNet
 from .resnet32 import resnet32
-from .resnet18_cifar import resnet18_cifar
+
 
 # available torchvision models
 tvmodels = ['alexnet',

@@ -160,7 +160,7 @@ class Appr(Inc_Learning_Appr):
                                                          batch_size=self.exem_batch_size,
                                                          shuffle=True, drop_last=False))
 
-        # Training - Split Learning
+        # Training - Step1.Split Learning
         super().train_loop(t, client_loaders, client_models)
 
         # Collect exemplars
@@ -169,7 +169,7 @@ class Appr(Inc_Learning_Appr):
                                                  client_loaders[0][1].dataset.transform,\
                                                  dp=True, prev_cls=self.prev_classes, fix_prev=self.fix_prev)
         
-        # A. Constructing DP exemplars
+        # Step2 A. Constructing DP exemplars
         # Compute differentially private mean on a per-class basis
         if t == 0:
             class_nums = self.server_model.task_cls[0]
@@ -229,10 +229,10 @@ class Appr(Inc_Learning_Appr):
                                                      batch_size=self.exem_batch_size,
                                                      shuffle=True, drop_last=False))
         
-        # B. Aligning D^t and DP exemplars via MIA
+        # Step2 B. Aligning D^t and DP exemplars via MIA
         self.after_train(t, client_loaders, client_models)
         
-        # C. Computing Class Prototypes
+        # Step2 C. Computing Class Prototypes
         self.compute_mean_of_exemplars(client_loaders[0][0], client_loaders[0][1].dataset.transform, fix_prev=self.fix_prev)
 
     def post_train_process(self, t, client_loaders):
