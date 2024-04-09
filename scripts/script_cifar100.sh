@@ -27,14 +27,14 @@ echo "Results dir: $RESULTS_DIR"
 for SEED in 0 1 2 3 4
 do
     if [ "$3" = "base_cl" ]; then
-          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main_incremental.py --exp-name base_cl_${SEED} \
+          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main.py --exp-name base_cl_${SEED} \
                 --datasets cifar100_icarl --num-tasks 10 --network resnet32 --seed $SEED \
                 --nepochs 200 --batch-size 128 --results-path $RESULTS_DIR --opt adam \
                 --approach $1 --gpu $2 --lr 0.001 --lr-patience 20 \
                 --lamb-distill-ewc 5000 --lamb-distill-mas 1 --lamb-distill 10 \
         
     elif [ "$3" = "fixd_cl" ]; then
-          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main_incremental.py --exp-name base_csl_${SEED} \
+          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main.py --exp-name base_csl_${SEED} \
                 --datasets cifar100_icarl --num-tasks 10 --network resnet32 --seed $SEED \
                 --nepochs 200 --batch-size 128 --results-path $RESULTS_DIR --opt adam \
                 --approach $1 --gpu $2 --lr 0.001 --lr-patience 20 \
@@ -42,14 +42,14 @@ do
                 --num-exemplars 2000 --exemplar-selection herding
         
     elif [ "$3" = "base_csl" ]; then
-          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main_split_incremental.py --exp-name base_csl_${SEED} \
+          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main_split.py --exp-name base_csl_${SEED} \
                 --datasets cifar100_icarl --num-tasks 10 --network resnet32 --seed $SEED \
                 --nepochs 200 --batch-size 128 --results-path $RESULTS_DIR --opt adam \
                 --approach $1 --gpu $2 --lr 0.001 --lr-patience 20 --nclients 10 \
                 --lamb-distill-ewc 10000 --lamb-distill-mas 400 --lamb-distill 10
         
     elif [ "$3" = "grow_csl" ]; then
-          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main_split_incremental.py --exp-name grow_csl_${SEED} \
+          PYTHONPATH=$SRC_DIR python -u $SRC_DIR/main_split.py --exp-name grow_csl_${SEED} \
                 --datasets cifar100_icarl --num-tasks 10 --network resnet32 --seed $SEED \
                 --nepochs 200 --batch-size 128 --exem-batch-size 128 --results-path $RESULTS_DIR --opt adam \
                 --approach $1 --gpu $2 --lr 0.001 --lr-patience 20 --nclients 10 \
