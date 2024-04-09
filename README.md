@@ -2,12 +2,12 @@
 This is Pytorch impelementation of "Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning", Jungmin Eom, Minjun Kang, Jinkyu Kim, Jaekoo Lee
 
 ## Main Architecture
-![screensh](./fig/overview.pdf)
+![screensh](./fig/overview.png)
 
 ## Dataset
 We use MedMNIST, HAM10000, CCH5000, CIFAR100, and SVHN.   
-MedMNIST: Run the command "pip install medmnist"   
-CIFAR100, SVHN: It is automatically installed when you run the train command with the relevant dataset.   
+* MedMNIST: Run the command "pip install medmnist"   
+* CIFAR100, SVHN: It is automatically installed when you run the train command with the relevant dataset.   
 
 ## Train
 Run the following command to train the PRCSL Framework
