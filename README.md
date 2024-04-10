@@ -6,7 +6,7 @@ This is Pytorch impelementation of "Alleviating-Catastrophic-Forgetting-with-Pri
 
 ## Dataset
 We use MedMNIST, HAM10000, CCH5000, CIFAR100, and SVHN. Datasets should be installed at './src/data'.
-Before downloading datasets HAM10000 and CCH5000, please refer to [./src/datasets][./src/datasets].
+Before downloading datasets HAM10000 and CCH5000, please refer to [./src/datasets](./src/datasets).
 * MedMNIST: Run the command "pip install medmnist"   
 * CIFAR100, SVHN: It is automatically installed when you run the train command with the relevant dataset   
 * HAM10000   
