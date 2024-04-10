@@ -10,8 +10,10 @@ Before downloading datasets HAM10000 and CCH5000, please refer to [./src/dataset
 * MedMNIST: Run the command "pip install medmnist"   
 * CIFAR100, SVHN: It is automatically installed when you run the train command with the relevant dataset   
 * HAM10000   
-    * Download: Download zip files from https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
-    * Data augmentation: Refer https://github.com/Woodman718/FixCaps/blob/main/augmentation/02_Aug_img.ipynb
+    * Download   
+        Download zip files from https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
+    * Data augmentation   
+        Refer https://github.com/Woodman718/FixCaps/blob/main/augmentation/02_Aug_img.ipynb
 * CCH5000   
     * Download: Download zip files from https://zenodo.org/records/53169
     * After download CCH5000, you should convert the format to jpg
