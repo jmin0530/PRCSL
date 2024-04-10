@@ -32,4 +32,4 @@ The parameters are defined as follows:
     * `grow_csl`: exemplars with grow memory(split learning)   
 * `[<results_dir>]` - results directory (optional), by default it will be `./results`
 
-PRCSL code structure is inspired by [FACIL][https://github.com/mmasana/FACIL/tree/master].
+PRCSL code structure is inspired by [FACIL](https://github.com/mmasana/FACIL/tree/master).
