@@ -1,13 +1,20 @@
 # Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning
-This is Pytorch impelementation of "Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning", Jungmin Eom, Minjun Kang, Jinkyu Kim, Jaekoo Lee
+This is Pytorch impelementation of "Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning", Jungmin Eom, Minjun Kang, Nikil Dutt, Jinkyu Kim, Jaekoo Lee
 
 ## Main Architecture
 ![screensh](./fig/overview.png)
 
 ## Dataset
-We use MedMNIST, HAM10000, CCH5000, CIFAR100, and SVHN.   
+We use MedMNIST, HAM10000, CCH5000, CIFAR100, and SVHN. Datasets should be installed at './src/data'.
+Before downloading datasets HAM10000 and CCH5000, please refer to [./src/datasets][./src/datasets].
 * MedMNIST: Run the command "pip install medmnist"   
-* CIFAR100, SVHN: It is automatically installed when you run the train command with the relevant dataset.   
+* CIFAR100, SVHN: It is automatically installed when you run the train command with the relevant dataset   
+* HAM10000   
+    * Download: Download zip files from https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
+    * Data augmentation: Refer https://github.com/Woodman718/FixCaps/blob/main/augmentation/02_Aug_img.ipynb
+* CCH5000   
+    * Download: Download zip files from https://zenodo.org/records/53169
+    * After download CCH5000, you should convert the format to jpg
 
 ## Train
 Run the following command to train the PRCSL Framework
@@ -24,3 +31,5 @@ The parameters are defined as follows:
     * `fixd_csl`: exemplars with fixed memory(split learning)   
     * `grow_csl`: exemplars with grow memory(split learning)   
 * `[<results_dir>]` - results directory (optional), by default it will be `./results`
+
+PRCSL code structure is inspired by [FACIL][https://github.com/mmasana/FACIL/tree/master].
