@@ -1,5 +1,5 @@
 # Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning
-This is Pytorch impelementation of "Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning", Jungmin Eom, Minjun Kang, Nikil Dutt, Jinkyu Kim, Jaekoo Lee
+This is Pytorch impelementation of "Alleviating-Catastrophic-Forgetting-with-Privacy-Preserving-Distributed-Learning", Jungmin Eom, Minjun Kang, Myungkeun Yoon, Nikil Dutt, Jinkyu Kim, Jaekoo Lee
 
 ## Main Architecture
 ![screensh](./fig/overview.png)
