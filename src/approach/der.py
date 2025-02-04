@@ -44,7 +44,6 @@ class Appr(Inc_Learning_Appr):
     def extra_parser(args):
         """Returns a parser containing the approach specific parameters"""
         parser = ArgumentParser()
-        # Sec. 4. " allowing iCaRL to balance between CE and distillation loss."
         parser.add_argument('--lamb', default=1, type=float, required=False,
                             help='Forgetting-intransigence trade-off (default=%(default)s)')
         return parser.parse_known_args(args)
@@ -58,7 +57,6 @@ class Appr(Inc_Learning_Appr):
                                                  pin_memory=trn_loader.pin_memory)
         self.buffer_batch_size = trn_loader.batch_size
         self.buffer_transform = to_kornia_transform(trn_loader.dataset.transform.transforms)
-        # FINETUNING TRAINING -- contains the epochs loop
         super().train_loop(t, trn_loader, val_loader)
 
     def train_epoch(self, t, trn_loader):
@@ -68,26 +66,21 @@ class Appr(Inc_Learning_Appr):
             self.model.freeze_bn()
         for i, (images, targets, no_aug_images) in enumerate(trn_loader):
             self.optimizer.zero_grad()
+            
             # Forward current model
             outputs = self.model(images.to(self.device))
             loss = self.criterion(t, outputs, targets.to(self.device))
             loss.backward()
 
-            # exemplar에서 랜덤으로 batchsize 만큼 뽑은 후 loader 씌워서 augmentation 적용
-            # 그 후 현재 모델에 exemplar data 입력하여 나온 logit값(outputs_buff)와
-            # exemplar에 저장된 logit값(logits_buff) 간 mse loss 계산
             if len(self.exemplars_dataset.images) != 0:
                 buff_images, buff_logits = self.get_buff_data()
                 outputs_buff = self.model(buff_images.to(self.device))
                 loss_mse = self.alpha * F.mse_loss(outputs_buff[0], buff_logits.to(self.device))
                 loss_mse.backward()
-#             torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.clipgrad)
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.clipgrad)
             self.optimizer.step()
             
             # reservoir sampling
-            # not_aug_inputs:augmentation이 적용 안된 배치단위 입력 이미지. 타입은 torch.tensor
-            # 다만, no_aug_images의 경우 정규화되어 있는 상태이며 하나의 이미지 크기가 padding 되기 전이다!!
-            # no_aug_img plot 했을 때는 정상적으로 이미지가 출력됨을 확인함!!
             self.add_exemplar_data(no_aug_images, logits = outputs[0].data, labels = None)
             
             
@@ -148,33 +141,21 @@ class Appr(Inc_Learning_Appr):
             total_loss, total_acc_taw, total_acc_tag, total_num = 0, 0, 0, 0
             self.model.eval()
             for images, targets, _ in val_loader:
-                # Forward current model
                 outputs, feats = self.model(images.to(self.device), return_features=True)
                 loss = self.criterion(t, outputs, targets.to(self.device))
-                # during training, the usual accuracy is computed on the outputs
                 hits_taw, hits_tag = self.calculate_metrics(outputs, targets)
-                # Log
                 total_loss += loss.item() * len(targets)
-#                 total_acc_taw += hits_taw.sum().item()
                 total_acc_tag += hits_tag.sum().item()
                 total_num += len(targets)
         return total_loss / total_num, 0.0, total_acc_tag / total_num
 
-    # Algorithm 3: classification and distillation terms -- original formulation has no trade-off parameter (lamb=1)
     def criterion(self, t, outputs, targets):
         """Returns the loss value"""
-        # Classification loss for new classes
         loss = torch.nn.functional.cross_entropy(torch.cat(outputs, dim=1), targets)
         return loss
     
     def calculate_metrics(self, outputs, targets):
         """Contains the main Task-Aware and Task-Agnostic metrics"""
-#         pred = torch.zeros_like(targets.to(self.device))
-#         # Task-Aware Multi-Head
-#         for m in range(len(pred)):
-#             this_task = (self.model.task_cls.cumsum(0) <= targets[m]).sum()
-#             pred[m] = outputs[this_task][m].argmax() + self.model.task_offset[this_task]
-#         hits_taw = (pred == targets.to(self.device)).float()
         # Task-Agnostic Multi-Head
         if self.multi_softmax:
             outputs = [torch.nn.functional.log_softmax(output, dim=1) for output in outputs]
@@ -183,19 +164,3 @@ class Appr(Inc_Learning_Appr):
             pred = torch.cat(outputs, dim=1).argmax(1)
         hits_tag = (pred == targets.to(self.device)).float()
         return 0.0, hits_tag
-
-
-def imgsave(inp, i, label, adding=False):
-    """tensor를 입력받아 일반적인 이미지로 보여줍니다."""
-#     inp = inp.cpu().numpy().transpose((1, 2, 0))
-#     mean = np.array([0.5071, 0.4866, 0.4409])
-#     std = np.array([0.2009, 0.1984, 0.2023])
-#     inp = std * inp + mean
-#     inp = np.clip(inp, 0, 1)
-    
-    inp = inp.permute(1, 2, 0).cpu()
-    plt.imshow(inp)
-    if adding:
-        plt.savefig(f'add_exemplar_data img[{i}] (label: {label})')
-    else:
-        plt.savefig(f'training no_aug img[{i}] (label: {label})')

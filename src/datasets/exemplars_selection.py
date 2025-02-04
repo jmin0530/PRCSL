@@ -81,34 +81,6 @@ class RandomExemplarsSelector(ExemplarsSelector):
             raise RuntimeError("Unsupported dataset: {}".format(sel_loader.dataset.__class__.__name__))
         return labels
 
-# +
-# class ReservoirExemplarsSelector(ExemplarsSelector):
-#     """Selection of new samples. This is based on Reservoir algorithim sampling."""
-
-#     def __init__(self, exemplars_dataset):
-#         super().__init__(exemplars_dataset)
-#         self.num_seen_samples = 0
-#     def _select_indices(self, inputs, labels = None, logits = None) -> Iterable:
-        
-#         for i in range(inputs.shape[0]):
-#             # Reservoir sampling
-#             if self.num_seen_samples < self.exemplars_dataset.max_num_exemplars:
-#                 ind = self.num_seen_samples
-#             rand = np.random.randint(0, num_seen_examples + 1)
-#             if rand < self.exemplars_dataset.max_num_exemplars:
-#                 ind = rand
-#             else:
-#                 ind = -1
-
-#             self.num_seen_samples += 1
-            
-#             # Add exemplars to memory or change exemplars in memory
-#             if ind >= 0:
-                
-        
-        
-        
-# -
 
 class HerdingExemplarsSelector(ExemplarsSelector):
     """Selection of new samples. This is based on herding selection, which produces a sorted list of samples of one

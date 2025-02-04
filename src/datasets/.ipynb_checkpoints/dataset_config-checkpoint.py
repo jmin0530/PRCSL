@@ -81,8 +81,6 @@ dataset_config = {
         'normalize': None,
         'gaussian': False
     },
-    # prcsl norm: (0.5071, 0.4866, 0.4409), (0.2009, 0.1984, 0.2023)
-    # mammoth norm: (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
     'cifar100_icarl': { 
         'path': join(_BASE_DATA_PATH, 'cifar100'),
         'resize': None,

@@ -126,7 +126,6 @@ class Inc_Learning_Appr:
             # Receive previous client's weight
             if i > 0:
                 client.load_state_dict(previous_client.state_dict())
-                print("previous_client", previous_client.state_dict())
                 
             if self.opt == 'adam':
                 client_optim = torch.optim.Adam(client.parameters(), lr=lr, weight_decay=self.wd)

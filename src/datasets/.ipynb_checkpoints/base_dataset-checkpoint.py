@@ -26,8 +26,6 @@ class BaseDataset(Dataset):
     def __getitem__(self, index):
         """Generates one sample of data"""
         x = Image.open(self.images[index]).convert('RGB')
-#         x = self.transform(x)
-#         y = self.labels[index]
         transform_x = self.transform(x)
         no_aug_x = self.no_aug_transforms(x)
         y = self.labels[index]

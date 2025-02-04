@@ -15,7 +15,6 @@ from datasets.exemplars_selection_split import override_dataset_transform
 import cv2
 
 
-# +
 class Appr(Inc_Learning_Appr):
     def __init__(self, server_model, client_model, device, nepochs=60, lr=0.5, lr_min=1e-4, lr_factor=3, lr_patience=5, clipgrad=10000,
                  momentum=0.9, wd=1e-5, multi_softmax=False, fix_bn=False,
@@ -32,7 +31,7 @@ class Appr(Inc_Learning_Appr):
         if not have_exemplars:
             warnings.warn("Warning: PRCSL is expected to use exemplars. Check documentation.")
             
-        self.nepochs_finetuning = 1 # 원래: 20
+        self.nepochs_finetuning = 20
         self._after_train = False
         
     @staticmethod
@@ -114,21 +113,6 @@ class Appr(Inc_Learning_Appr):
         n_client_loaders = len(client_loaders)
         new_client_dataloader = deepcopy(client_loaders)
         class_nums = sum(self.server_model.task_cls[:t+1])
-        # data_balance_class: 
-        # data_balance_random: 
-#         if self.data_balance_class or self.data_balance_random:
-#             for i in range(n_client_loaders):
-#                 client_train_dataset = new_client_dataloader[i][0].dataset
-#                 client_train_dataset_labels = client_train_dataset.labels
-                
-#                 if self.data_balance_random:
-#                     client_indices = torch.randperm(len(client_train_dataset))
-#                     client_train_dataset.images = list(np.array(client_train_dataset.images)\
-#                                                        [client_indices[:len(self.exemplars_dataset)//n_client_loaders]])
-#                     client_train_dataset.labels = list(np.array(client_train_dataset.labels)\
-#                                                        [client_indices[:len(self.exemplars_dataset)//n_client_loaders]])
-                        
-#                 print(f"{i} client data, label len: ", len(new_client_dataloader[i][0].dataset.images), len(new_client_dataloader[i][0].dataset.labels))
         
         super().train_loop(t, new_client_dataloader, client_models)
         
@@ -180,7 +164,6 @@ class Appr(Inc_Learning_Appr):
         else:
             class_nums = sum(self.server_model.task_cls[:t+1])
             
-        print("class_nums: ", class_nums)
         for cur_cls in range(class_nums):
             cls_ind = np.where(np.array(list(self.exemplars_dataset.labels))==cur_cls)[0]
             if cur_cls in self.prev_classes:
@@ -190,10 +173,6 @@ class Appr(Inc_Learning_Appr):
                     del self.exemplars_dataset.images[prev_cls_ind_first:prev_cls_ind_last+1]
                     del self.exemplars_dataset.labels[prev_cls_ind_first:prev_cls_ind_last+1]
                 continue
-                
-            print("cur_cls: ", cur_cls)
-            print("self.exemplars_dataset.labels: ", self.exemplars_dataset.labels)
-            print("self.exemplars_dataset.images: ", len(self.exemplars_dataset.images))
             class_data = deepcopy(self.exemplars_dataset.images[cls_ind[0]:cls_ind[-1]+1])
             class_data_label = deepcopy([cur_cls for _ in range(len(cls_ind))])
                     

@@ -73,12 +73,9 @@ class ExemplarsSelector:
         try:
             num_cls = model.task_cls.sum().item()
         except:
-            num_cls = sum([n[1] for n in taskcla[:t+1]]) # der에서는 task_cls가 빈 리스트임
-        print(f'num_cls : {num_cls}')
+            num_cls = sum([n[1] for n in taskcla[:t+1]])
         num_exemplars = self.exemplars_dataset.max_num_exemplars
-        print("num_exemplars: ", num_exemplars)
         exemplars_per_class = int(np.ceil(num_exemplars / num_cls))
-        print("original_exemplars_per_class: ", exemplars_per_class)
         assert exemplars_per_class > 0, \
             "Not enough exemplars to cover all classes!\n" \
             "Number of classes so far: {}. " \
@@ -123,63 +120,6 @@ class RandomExemplarsSelector(ExemplarsSelector):
             raise RuntimeError("Unsupported dataset: {}".format(sel_loader.dataset.__class__.__name__))
         return labels
 
-
-# +
-# class ReservoirExemplarsSelector(ExemplarsSelector):
-#     """Reservoir algorithm selection"""
-
-#     def __init__(self, exemplars_dataset):
-#         super().__init__(exemplars_dataset)
-#         self.num_seen_examples = 0
-#     def reservoir(self, num_seen_examples: int, buffer_size: int) -> int:
-#         """
-#         Reservoir sampling algorithm.
-
-#         Args:
-#             num_seen_examples: the number of seen examples
-#             buffer_size: the maximum buffer size
-
-#         Returns:
-#             the target index if the current image is sampled, else -1
-#         """
-#         if num_seen_examples < buffer_size:
-#             return num_seen_examples
-
-#         rand = np.random.randint(0, num_seen_examples + 1)
-#         if rand < buffer_size:
-#             return rand
-#         else:
-#             return -1
-        
-#     def _select_indices(self, model: LLL_Net, sel_loader: DataLoader, exemplars_per_class: int, transform, dp, prev_cls) -> Iterable:
-# #         if not hasattr(self, 'examples'):
-# #             self.init_tensors(examples, labels, logits, task_labels)
-#         for i in range(examples.shape[0]):
-#             index = reservoir(self.num_seen_examples, self.max_num_exemplars)
-#             self.num_seen_examples += 1
-#             if index >= 0:
-#                 self.examples[index] = examples[i].to(self.device)
-#                 if labels is not None:
-#                     self.labels[index] = labels[i].to(self.device)
-#                 if logits is not None:
-#                     self.logits[index] = logits[i].to(self.device)
-#                 if task_labels is not None:
-#                     self.task_labels[index] = task_labels[i].to(self.device)
-#                 if attention_maps is not None:
-#                     self.attention_maps[index] = [at[i].byte().to(self.device) for at in attention_maps]
-
-#     def _get_labels(self, sel_loader):
-#         if hasattr(sel_loader.dataset, 'labels'):  # BaseDataset, MemoryDataset
-#             labels = np.asarray(sel_loader.dataset.labels)
-#         elif isinstance(sel_loader.dataset, ConcatDataset):
-#             labels = []
-#             for ds in sel_loader.dataset.datasets:
-#                 labels.extend(ds.labels)
-#             labels = np.array(labels)
-#         else:
-#             raise RuntimeError("Unsupported dataset: {}".format(sel_loader.dataset.__class__.__name__))
-#         return labels
-# -
 
 class HerdingExemplarsSelector(ExemplarsSelector):
     """Selection of new samples. This is based on herding selection, which produces a sorted list of samples of one

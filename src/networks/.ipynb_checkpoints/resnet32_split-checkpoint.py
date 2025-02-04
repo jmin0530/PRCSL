@@ -159,21 +159,3 @@ class ResNet32_server_side(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.fc(x)
         return x
-
-# +
-# def resnet32_client(pretrained=False, **kwargs):
-#     if pretrained:
-#         raise NotImplementedError
-#     # change n=3 for ResNet-20, and n=9 for ResNet-56
-#     n = 5
-#     model = ResNet(BasicBlock, [n, n, n], **kwargs)
-#     return model
-
-# +
-# def resnet32_server(pretrained=False, **kwargs):
-#     if pretrained:
-#         raise NotImplementedError
-#     # change n=3 for ResNet-20, and n=9 for ResNet-56
-#     n = 5
-#     model = ResNet(BasicBlock, [n, n, n], **kwargs)
-#     return model

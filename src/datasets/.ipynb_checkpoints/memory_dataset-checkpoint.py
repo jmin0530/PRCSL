@@ -32,9 +32,6 @@ class MemoryDataset(Dataset):
             x = Image.fromarray(self.images[index])
         else:
             x = self.images[index]
-        print("train data transform")
-        print(self.transform)
-        exit(True)
         transform_x = self.transform(x)
         no_aug_x = self.no_aug_transforms(x)
         y = self.labels[index]

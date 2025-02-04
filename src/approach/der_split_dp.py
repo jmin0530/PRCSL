@@ -14,12 +14,7 @@ from datasets.exemplars_selection_split import override_dataset_transform
 from torch.nn import functional as F
 
 
-# +
 class Appr(Inc_Learning_Appr):
-    """Class implementing the Incremental Classifier and Representation Learning (iCaRL) approach
-    described in https://arxiv.org/abs/1611.07725
-    Original code available at https://github.com/srebuffi/iCaRL
-    """
 
     def __init__(self, server_model, client_model, device, nepochs=60, lr=0.5, lr_min=1e-4, lr_factor=3, lr_patience=5, clipgrad=10000,
                  momentum=0.9, wd=1e-5, multi_softmax=False, wu_nepochs=0, wu_lr_factor=1, fix_bn=False,
@@ -27,8 +22,6 @@ class Appr(Inc_Learning_Appr):
         super(Appr, self).__init__(server_model, client_model, device, nepochs, lr, lr_factor, lr_patience, clipgrad, momentum, wd,
                                    multi_softmax, fix_bn, eval_on_train, exem_batch_size, logger,
                                    exemplars_dataset)
-        self.server_model_old = None
-        self.client_model_old = None
         self.total_exem_info = []
         self.previous_client_loaders = []
         self.prev_classes = []
@@ -36,7 +29,7 @@ class Appr(Inc_Learning_Appr):
         # `_get_optimizer` function with the one in LwF and update the criterion
         have_exemplars = self.exemplars_dataset.max_num_exemplars + self.exemplars_dataset.max_num_exemplars_per_class
         if not have_exemplars:
-            warnings.warn("Warning: iCaRL is expected to use exemplars. Check documentation.")
+            warnings.warn("Warning: DER is expected to use exemplars. Check documentation.")
 
     @staticmethod
     def exemplars_dataset_class():
@@ -46,21 +39,17 @@ class Appr(Inc_Learning_Appr):
     def extra_parser(args):
         """Returns a parser containing the approach specific parameters"""
         parser = ArgumentParser()
-        # Sec. 4. " allowing iCaRL to balance between CE and distillation loss."
         parser.add_argument('--lamb', default=1, type=float, required=False,
                             help='Forgetting-intransigence trade-off (default=%(default)s)')
         return parser.parse_known_args(args)
 
-    # Algorithm 2: iCaRL Incremental Train
     def train_loop(self, t, client_loaders, client_models):
         """Contains the epochs loop"""
 
         if t > 0:
-            # exemplar dataset을 클라이언트 갯수만큼 나누어서 쪼개기
             self.exemplar_loaders_split = []
             n_clients = len(client_loaders)
             n_exemplars = len(self.exemplars_dataset.images)
-#             shuffled_exemplars_dataset = deepcopy(self.exemplars_dataset)
             exem_indices = torch.randperm(len(self.exemplars_dataset.images))
             for i in range(n_clients):
                 one_exem_data = deepcopy(self.exemplars_dataset)
@@ -83,7 +72,7 @@ class Appr(Inc_Learning_Appr):
                                                 dp=True, prev_cls=self.prev_classes, fix_prev=False, taskcla=self.taskcla)
         
         # compute differentially private mean on a per-class basis
-        class_nums = sum(n[1] for n in self.taskcla[:t+1]) # der의 경우 모든 클래스개수만큼 출력이므로 수정 필요
+        class_nums = sum(n[1] for n in self.taskcla[:t+1])
         if t == 0:
             self.first_exemplar_size = len(deepcopy(self.exemplars_dataset))
         
@@ -120,34 +109,12 @@ class Appr(Inc_Learning_Appr):
                 self.exemplars_dataset.images.append(dp_image)
                 self.exemplars_dataset.labels.append(l)
                 del dp_image
-                
-        print("Final memory length: ", len(self.exemplars_dataset.labels))
         
         # add logits to memory
         self.exemplars_dataset.add_logits_to_memory(t, self.exemplars_dataset, client_loaders, \
                                                     self.client_model, self.server_model, self.exem_batch_size, self.device)
         # save previous classes
         self.prev_classes=deepcopy(np.unique(self.exemplars_dataset.labels))
-        print("Previous classes: ", self.prev_classes)
-          
-#         # compute mean of exemplars
-#         self.compute_mean_of_exemplars(client_loaders[0][0], client_loaders[0][1].dataset.transform)
-                
-    def post_train_process(self, t, client_loaders):
-        """Runs after training all the epochs of the task (after the train session)"""
-
-        # Save old model to extract features later. This is different from the original approach, since they propose to
-        #  extract the features and store them for future usage. However, when using data augmentation, it is easier to
-        #  keep the model frozen and extract the features when needed.
-
-            
-        self.server_model_old = deepcopy(self.server_model)
-        self.server_model_old.eval()
-        self.server_model_old.freeze_all()
-
-        self.client_model_old = deepcopy(self.client_model)
-        self.client_model_old.eval()
-        self.client_model_old.freeze_all()
 
     def train_epoch(self, t, client_loaders, client_models, lr):
         """Runs a single epoch"""
@@ -164,10 +131,7 @@ class Appr(Inc_Learning_Appr):
         k=0
         j=0
         for i in range(current_client_num):
-            # 모델 client 초기화
             client = client_models[0]
-            
-            # 모델 client 이전 client것 불러오기
             if i > 0:
                 client.load_state_dict(previous_client.state_dict())
             client.train()
@@ -213,13 +177,13 @@ class Appr(Inc_Learning_Appr):
                 self.optimizer_server.zero_grad()
                 loss.backward()
                 dfx_client = client_fx.grad.clone().detach()
-#                 torch.nn.utils.clip_grad_norm_(self.server_model.parameters(), self.clipgrad)
+                torch.nn.utils.clip_grad_norm_(self.server_model.parameters(), self.clipgrad)
                 self.optimizer_server.step()
 
                 # Client Backward
                 client_optim.zero_grad()
                 client_outputs.backward(dfx_client)
-#                 torch.nn.utils.clip_grad_norm_(client.parameters(), self.clipgrad)
+                torch.nn.utils.clip_grad_norm_(client.parameters(), self.clipgrad)
                 client_optim.step()
     
 
@@ -247,7 +211,6 @@ class Appr(Inc_Learning_Appr):
             
             # Log
             total_loss += loss.item() * len(y)
-#             total_acc_taw += hits_taw.sum().item()
             total_acc_tag += hits_tag.sum().item()
             total_num += len(y)
                 
@@ -278,7 +241,6 @@ class Appr(Inc_Learning_Appr):
         final_valid_acc_ag = total_valid_acc_ag / iteration
         return final_valid_loss, 0.0, final_valid_acc_ag
 
-    # Algorithm 3: classification and distillation terms -- original formulation has no trade-off parameter (lamb=1)
     def criterion(self, t, outputs, targets, now_exem):
         """Returns the loss value"""
         if not now_exem:
@@ -289,7 +251,6 @@ class Appr(Inc_Learning_Appr):
             # memory buffer mse loss
             loss = self.alpha * F.mse_loss(torch.cat(outputs, dim=1), targets)
         return loss
-# -
 
 
 

@@ -73,12 +73,6 @@ class Inc_Learning_Appr(Inc_Learning_Appr):
             
     def calculate_metrics(self, outputs, targets):
         """Contains the main Task-Aware and Task-Agnostic metrics"""
-#         pred = torch.zeros_like(targets.to(self.device))
-#         # Task-Aware Multi-Head
-#         for m in range(len(pred)):
-#             this_task = (self.server_model.task_cls.cumsum(0).to(self.device) <= targets[m]).sum()
-#             pred[m] = outputs[this_task][m].argmax() + self.server_model.task_offset[this_task]
-#         hits_taw = (pred == targets.to(self.device)).float()
         # Task-Agnostic Multi-Head
         if self.multi_softmax:
             outputs = [torch.nn.functional.log_softmax(output, dim=1) for output in outputs]

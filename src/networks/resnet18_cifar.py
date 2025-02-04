@@ -135,26 +135,3 @@ def resnet18_cifar(pretrained=False, **kwargs):
     """ return a ResNet 18 object
     """
     return ResNet_cifar(BasicBlock, [2, 2, 2, 2])
-
-# +
-
-
-# def resnet34():
-#     """ return a ResNet 34 object
-#     """
-#     return ResNet(BasicBlock, [3, 4, 6, 3])
-
-# def resnet50():
-#     """ return a ResNet 50 object
-#     """
-#     return ResNet(BottleNeck, [3, 4, 6, 3])
-
-# def resnet101():
-#     """ return a ResNet 101 object
-#     """
-#     return ResNet(BottleNeck, [3, 4, 23, 3])
-
-# def resnet152():
-#     """ return a ResNet 152 object
-#     """
-#     return ResNet(BottleNeck, [3, 8, 36, 3])
