@@ -81,6 +81,8 @@ def main(argv=None):
                         help='DP mean batch')
     parser.add_argument('--epsilon', default=10.0, type=float, required=False,
                         help='DP epsilon')
+    parser.add_argument('--alpha', default=0.03, type=float, required=False,
+                        help='DER approach regularization coefficient')
     parser.add_argument('--eval-on-train', action='store_true',
                         help='Show train loss and accuracy (default=%(default)s)')
     parser.add_argument('--fix-bn', action='store_true',
@@ -113,11 +115,9 @@ def main(argv=None):
                         help='Weight decay (L2 penalty) (default=%(default)s)')
     parser.add_argument('--multi-softmax', action='store_true',
                         help='Apply separate soffix_prevtmax for each task (default=%(default)s)')
-    
-    
-    
     parser.add_argument('--fix-prev', action='store_true',
                         help='Fix previous class exemplar feature means')
+    parser.add_argument('--keep-classifier', action='store_true', help='Keep model\'s classifier')
 
     # Args
     args, extra_args = parser.parse_known_args(argv)
@@ -152,21 +152,30 @@ def main(argv=None):
         input_channel = 3
         
     # Model initialization
+    
+    num_classes_dict = {'bloodmnist': 8, 'organamnist': 11, 'pathmnist': 9, 'tissuemnist': 8, 'cch5000': 8, 'ham10000': 7,
+                       'cifar100_icarl': 100, 'svhn': 10}
+    
     if args.datasets == ['cch5000'] or args.datasets == ['ham10000']:
         print("Network: ResNet18_split")
         init_server_model = ResNet18_server_side(Basicblock_resnet18, [2,2,2]).to(device)
-        global_server_net = LLL_Net(init_server_model, remove_existing_head=not args.keep_existing_head)
+        global_server_net = LLL_Net(init_server_model, remove_existing_head=not args.keep_existing_head, \
+                                    keep_classifier=args.keep_classifier, num_classes=num_classes_dict[args.datasets[0]])
         global_client_net = ResNet18_client_side(Basicblock_resnet18, input_channel=input_channel).to(device)
         
     else:
         print("Network: ResNet32_split")
         init_server_model = ResNet32_server_side(BasicBlock, [5,5]).to(device)
-        global_server_net = LLL_Net(init_server_model, remove_existing_head=not args.keep_existing_head)
+        global_server_net = LLL_Net(init_server_model, remove_existing_head=not args.keep_existing_head, \
+                                    keep_classifier=args.keep_classifier, num_classes=num_classes_dict[args.datasets[0]])
         global_client_net = ResNet32_client_side(BasicBlock, [5], input_channel).to(device)
     
 
     # Args -- Continual Learning Approach
-    from approach.incremental_learning_split import Inc_Learning_Appr
+    if args.approach == 'der_split_dp':
+        from approach.incremental_learning_split_der import Inc_Learning_Appr
+    else:
+        from approach.incremental_learning_split import Inc_Learning_Appr
     Appr = getattr(importlib.import_module(name='approach.' + args.approach), 'Appr')
     assert issubclass(Appr, Inc_Learning_Appr)
     appr_args, extra_args = Appr.extra_parser(extra_args)
@@ -187,7 +196,6 @@ def main(argv=None):
         print('=' * 108)
     else:
         appr_exemplars_dataset_args = argparse.Namespace()
-
 
     assert len(extra_args) == 0, "Unused args: {}".format(' '.join(extra_args))
 
@@ -224,12 +232,16 @@ def main(argv=None):
     forg_taw = np.zeros((max_task, max_task))
     forg_tag = np.zeros((max_task, max_task))
     
+    appr.taskcla = taskcla
+    
     # Train arguments
     appr.opt = args.opt
     appr.lamb = args.lamb_distill
     appr.ewc_lamb = args.lamb_distill_ewc
     appr.mas_lamb = args.lamb_distill_mas
     appr.exem_per_class = getattr(appr_exemplars_dataset_args, "num_exemplars_per_class")
+    if args.approach == 'der_split_dp':
+         appr.alpha = args.alpha
     
     # DP hyperparameters
     appr.epsilon = args.epsilon
@@ -323,7 +335,8 @@ def main(argv=None):
         print('*' * 108)
 
         # Add head for current task
-        global_server_net.add_head(taskcla[t][1])
+        if args.approach != 'der_split_dp':
+            global_server_net.add_head(taskcla[t][1])
         global_server_net.to(device)
         
 

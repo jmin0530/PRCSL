@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 300, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 205, in main
+    net = LLL_Net(init_model, remove_existing_head=not args.keep_existing_head, keep_classifier=args.keep_classifier)
+  File "/workspace/ACCV_2024/PRCSL/src/networks/network.py", line 37, in __init__
+    self.heads.append(nn.Linear(self.out_size, self.model.num_classes))
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 778, in __getattr__
+    raise ModuleAttributeError("'{}' object has no attribute '{}'".format(
+torch.nn.modules.module.ModuleAttributeError: 'ResNet' object has no attribute 'num_classes'

@@ -2,6 +2,9 @@ import random
 import numpy as np
 from PIL import Image
 from torch.utils.data import Dataset
+import torch
+
+import torchvision.transforms as transforms
 
 
 class MemoryDataset(Dataset):
@@ -13,6 +16,8 @@ class MemoryDataset(Dataset):
         self.images = data['x']
         self.transform = transform
         self.class_indices = class_indices
+        self.return_logits = False
+        self.no_aug_transforms = transforms.Compose([transforms.ToTensor()])
 
     def __len__(self):
         """Denotes the total number of samples"""
@@ -20,10 +25,24 @@ class MemoryDataset(Dataset):
 
     def __getitem__(self, index):
         """Generates one sample of data"""
-        x = Image.fromarray(self.images[index])
-        x = self.transform(x)
+        '''
+        self.images type: numpy.array
+        '''
+        if isinstance(self.images[index], np.ndarray):
+            x = Image.fromarray(self.images[index])
+        else:
+            x = self.images[index]
+        transform_x = self.transform(x)
+        no_aug_x = self.no_aug_transforms(x)
         y = self.labels[index]
-        return x, y
+        if not self.return_logits:
+            return transform_x, y, no_aug_x
+        else:
+            logits =  self.logits[index]
+            return transform_x, y, logits, no_aug_x
+        
+    def get_no_aug_images(self, index):
+        return 
 
 
 def get_data(trn_data, tst_data, num_tasks, nc_first_task, validation, shuffle_classes, class_order=None):

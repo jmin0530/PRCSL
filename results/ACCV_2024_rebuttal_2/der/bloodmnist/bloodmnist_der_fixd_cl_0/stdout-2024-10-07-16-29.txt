@@ -1,0 +1,4 @@
+Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
+Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
+remove_existing_head:  True
+keep_classifier:  True

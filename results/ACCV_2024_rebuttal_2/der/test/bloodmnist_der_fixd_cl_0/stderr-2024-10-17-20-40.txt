@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 295, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 243, in main
+    appr.train(t, trn_loader[t], val_loader[t])
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 55, in train
+    self.train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 74, in train_loop
+    super().train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 86, in train_loop
+    valid_loss, valid_acc, _ = self.eval(t, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 158, in eval
+    total_acc_taw += hits_taw.sum().item()
+AttributeError: 'float' object has no attribute 'sum'

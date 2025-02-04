@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 312, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 260, in main
+    appr.train(t, trn_loader[t], val_loader[t])
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 55, in train
+    self.train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 73, in train_loop
+    super().train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning_der.py", line 75, in train_loop
+    self.train_epoch(t, trn_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 94, in train_epoch
+    for i, (images, targets, no_aug_images) in enumerate(trn_loader):
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 681, in __next__
+    data = self._next_data()
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 721, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/memory_dataset.py", line 36, in __getitem__
+    transform_x = self.transform(x)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 94, in __call__
+    img = t(img)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 954, in forward
+    return F.resized_crop(img, i, j, h, w, self.size, self.interpolation)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torchvision/transforms/functional.py", line 583, in resized_crop
+    img = crop(img, top, left, height, width)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torchvision/transforms/functional.py", line 504, in crop
+    return F_pil.crop(img, top, left, height, width)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torchvision/transforms/functional_pil.py", line 237, in crop
+    return img.crop((left, top, left + width, top + height))
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/PIL/Image.py", line 1302, in crop
+    return self._new(self._crop(self.im, box))
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/PIL/Image.py", line 1322, in _crop
+    _decompression_bomb_check(absolute_values)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/PIL/Image.py", line 3358, in _decompression_bomb_check
+    pixels = max(1, size[0]) * max(1, size[1])
+KeyboardInterrupt

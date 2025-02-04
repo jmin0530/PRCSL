@@ -46,7 +46,7 @@ def main(argv=None):
     # dataset args
     parser.add_argument('--datasets', default=['cifar100'], type=str, choices=list(dataset_config.keys()),
                         help='Dataset or datasets used (default=%(default)s)', nargs='+', metavar="DATASET")
-    parser.add_argument('--num-workers', default=4, type=int, required=False,
+    parser.add_argument('--num-workers', default=0, type=int, required=False,
                         help='Number of subprocesses to use for dataloader (default=%(default)s)')
     parser.add_argument('--pin-memory', default=False, type=bool, required=False,
                         help='Copy Tensors into CUDA pinned memory before returning them (default=%(default)s)')
@@ -99,13 +99,18 @@ def main(argv=None):
                         help='Fix batch normalization after first task (default=%(default)s)')
     parser.add_argument('--eval-on-train', action='store_true',
                         help='Show train loss and accuracy (default=%(default)s)')
+    parser.add_argument('--keep-classifier', action='store_true', help='Keep model\'s classifier')
+    
+    parser.add_argument('--alpha', default=0.3, type=float, required=False,
+                        help='DER alpha')
 
     # Args
     args, extra_args = parser.parse_known_args(argv)
     args.results_path = os.path.expanduser(args.results_path)
     base_kwargs = dict(nepochs=args.nepochs, lr=args.lr, lr_factor=args.lr_factor,
                        lr_patience=args.lr_patience, clipgrad=args.clipping, momentum=args.momentum,
-                       wd=args.weight_decay, multi_softmax=args.multi_softmax, fix_bn=args.fix_bn, eval_on_train=args.eval_on_train)
+                       wd=args.weight_decay, multi_softmax=args.multi_softmax, fix_bn=args.fix_bn, 
+                       eval_on_train=args.eval_on_train)
 
     if args.no_cudnn_deterministic:
         print('WARNING: CUDNN Deterministic will be disabled.')
@@ -130,7 +135,10 @@ def main(argv=None):
     #     self.C = torch.nn.DataParallel(C)
     #     self.C.to(self.device)
     ####################################################################################################################
-
+    
+    num_classes_dict = {'bloodmnist': 8, 'organamnist': 11, 'pathmnist': 9, 'tissuemnist': 8, 'cch5000': 8, 'ham10000': 7,
+                       'cifar100_icarl': 100, 'svhn': 10}
+    
     # Args -- Network
     from networks.network import LLL_Net
     if args.network in tvmodels:  # torchvision models
@@ -143,14 +151,16 @@ def main(argv=None):
     else:  # other models declared in networks package's init
         net = getattr(importlib.import_module(name='networks'), args.network)
         # WARNING: fixed to pretrained False for other model (non-torchvision)
-        init_model = net(pretrained=False)
-        
+        init_model = net(pretrained=False, num_classes=num_classes_dict[args.datasets[0]])
     if len(args.datasets)==1 and (args.datasets[-1]=='tissuemnist' or args.datasets[-1]=='organamnist'):
         init_model.conv1 = torch.nn.Conv2d(1, 16, kernel_size=3, stride=1, padding=1, bias=False)
     
 
     # Args -- Continual Learning Approach
-    from approach.incremental_learning import Inc_Learning_Appr
+    if args.approach == 'der':
+        from approach.incremental_learning_der import Inc_Learning_Appr
+    else:
+        from approach.incremental_learning import Inc_Learning_Appr
     Appr = getattr(importlib.import_module(name='approach.' + args.approach), 'Appr')
     assert issubclass(Appr, Inc_Learning_Appr)
     appr_args, extra_args = Appr.extra_parser(extra_args)
@@ -171,7 +181,7 @@ def main(argv=None):
         print('=' * 108)
     else:
         appr_exemplars_dataset_args = argparse.Namespace()
-
+    print("extra_args: ", extra_args)
     assert len(extra_args) == 0, "Unused args: {}".format(' '.join(extra_args))
     ####################################################################################################################
 
@@ -195,9 +205,19 @@ def main(argv=None):
 
     # Network and Approach instances
     utils.seed_everything(seed=args.seed)
-    net = LLL_Net(init_model, remove_existing_head=not args.keep_existing_head)
+    net = LLL_Net(init_model, remove_existing_head=not args.keep_existing_head, \
+                  keep_classifier=args.keep_classifier, num_classes=num_classes_dict[args.datasets[0]])
     print("num params: {}".format(sum(p.numel() for p in net.parameters())))
     utils.seed_everything(seed=args.seed)
+    
+#     # model weight initialization
+#     for m in net.modules():
+#         if isinstance(m, nn.Conv2d):
+#             nn.init.kaiming_normal_(
+#                 m.weight, mode='fan_out', nonlinearity='relu')
+#         elif isinstance(m, (nn.BatchNorm2d, nn.GroupNorm)):
+#             nn.init.constant_(m.weight, 1)
+#             nn.init.constant_(m.bias, 0)
 
     # taking transformations and class indices from first train dataset
     first_train_ds = trn_loader[0].dataset
@@ -220,6 +240,8 @@ def main(argv=None):
     acc_tag = np.zeros((max_task, max_task))
     forg_taw = np.zeros((max_task, max_task))
     forg_tag = np.zeros((max_task, max_task))
+    if args.approach == 'der':
+         appr.alpha = args.alpha
     for t, (_, ncla) in enumerate(taskcla):
 
         # Early stop tasks if flag
@@ -231,7 +253,8 @@ def main(argv=None):
         print('*' * 108)
 
         # Add head for current task
-        net.add_head(taskcla[t][1])
+        if args.approach != 'der':
+            net.add_head(taskcla[t][1])
         net.to(device)
 
         # Train

@@ -1,0 +1,407 @@
+Using downloaded and verified file: ./data/tissuemnist/tissuemnist.npz
+Using downloaded and verified file: ./data/tissuemnist/tissuemnist.npz
+Taskcla:  [(0, 2), (1, 2), (2, 2), (3, 2)]
+Number of clients each task:  [10, 10, 10, 10]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+ Epoch: 1 | Train: time= 28.0s | Valid: time=  5.2s loss=0.419, TAw acc= 84.0% | *
+ Epoch: 2 | Train: time= 27.4s | Valid: time=  4.8s loss=0.396, TAw acc= 84.2% | *
+ Epoch: 3 | Train: time= 27.1s | Valid: time=  5.4s loss=0.409, TAw acc= 83.2% |
+ Epoch: 4 | Train: time= 28.5s | Valid: time=  4.7s loss=0.422, TAw acc= 84.3% |
+ Epoch: 5 | Train: time= 27.6s | Valid: time=  5.1s loss=0.373, TAw acc= 84.8% | *
+ Epoch: 6 | Train: time= 28.1s | Valid: time=  4.9s loss=0.368, TAw acc= 85.8% | *
+ Epoch: 7 | Train: time= 28.3s | Valid: time=  4.7s loss=0.396, TAw acc= 84.5% |
+ Epoch: 8 | Train: time= 27.3s | Valid: time=  5.2s loss=0.370, TAw acc= 85.2% |
+ Epoch: 9 | Train: time= 28.3s | Valid: time=  4.6s loss=0.373, TAw acc= 85.4% |
+ Epoch: 10 | Train: time= 27.1s | Valid: time=  4.9s loss=0.383, TAw acc= 85.0% |
+ Epoch: 11 | Train: time= 28.2s | Valid: time=  4.6s loss=0.369, TAw acc= 85.3% |
+ Epoch: 12 | Train: time= 27.8s | Valid: time=  5.3s loss=0.380, TAw acc= 84.9% |
+ Epoch: 13 | Train: time= 28.1s | Valid: time=  4.6s loss=0.354, TAw acc= 85.7% | *
+ Epoch: 14 | Train: time= 27.9s | Valid: time=  5.3s loss=0.349, TAw acc= 86.0% | *
+ Epoch: 15 | Train: time= 26.8s | Valid: time=  4.8s loss=0.353, TAw acc= 85.9% |
+ Epoch: 16 | Train: time= 27.2s | Valid: time=  5.1s loss=0.369, TAw acc= 85.2% |
+ Epoch: 17 | Train: time= 28.0s | Valid: time=  4.8s loss=0.347, TAw acc= 85.8% | *
+ Epoch: 18 | Train: time= 27.8s | Valid: time=  4.9s loss=0.346, TAw acc= 85.9% | *
+ Epoch: 19 | Train: time= 28.0s | Valid: time=  4.8s loss=0.348, TAw acc= 86.2% |
+ Epoch: 20 | Train: time= 27.5s | Valid: time=  4.9s loss=0.357, TAw acc= 85.6% |
+ Epoch: 21 | Train: time= 28.4s | Valid: time=  5.2s loss=0.353, TAw acc= 85.8% |
+ Epoch: 22 | Train: time= 28.0s | Valid: time=  4.8s loss=0.365, TAw acc= 85.6% |
+ Epoch: 23 | Train: time= 27.9s | Valid: time=  5.0s loss=0.346, TAw acc= 86.4% |
+ Epoch: 24 | Train: time= 28.0s | Valid: time=  4.8s loss=0.372, TAw acc= 84.8% |
+ Epoch: 25 | Train: time= 28.0s | Valid: time=  5.0s loss=0.347, TAw acc= 85.7% |
+ Epoch: 26 | Train: time= 27.4s | Valid: time=  4.7s loss=0.339, TAw acc= 86.4% | *
+ Epoch: 27 | Train: time= 27.9s | Valid: time=  5.1s loss=0.348, TAw acc= 85.9% |
+ Epoch: 28 | Train: time= 28.1s | Valid: time=  4.7s loss=0.358, TAw acc= 86.2% |
+ Epoch: 29 | Train: time= 27.7s | Valid: time=  5.2s loss=0.354, TAw acc= 85.6% |
+ Epoch: 30 | Train: time= 27.8s | Valid: time=  5.1s loss=0.341, TAw acc= 86.5% |
+ Epoch: 31 | Train: time= 28.3s | Valid: time=  4.9s loss=0.354, TAw acc= 85.8% |
+ Epoch: 32 | Train: time= 27.5s | Valid: time=  5.2s loss=0.335, TAw acc= 86.5% | *
+ Epoch: 33 | Train: time= 28.0s | Valid: time=  4.9s loss=0.346, TAw acc= 86.2% |
+ Epoch: 34 | Train: time= 27.9s | Valid: time=  5.2s loss=0.354, TAw acc= 86.4% |
+ Epoch: 35 | Train: time= 27.7s | Valid: time=  4.8s loss=0.339, TAw acc= 86.6% |
+ Epoch: 36 | Train: time= 27.7s | Valid: time=  4.9s loss=0.341, TAw acc= 86.4% |
+ Epoch: 37 | Train: time= 27.2s | Valid: time=  4.8s loss=0.333, TAw acc= 86.8% | *
+ Epoch: 38 | Train: time= 27.6s | Valid: time=  5.2s loss=0.356, TAw acc= 85.6% |
+ Epoch: 39 | Train: time= 26.9s | Valid: time=  4.8s loss=0.350, TAw acc= 86.2% |
+ Epoch: 40 | Train: time= 28.1s | Valid: time=  5.1s loss=0.367, TAw acc= 84.7% |
+ Epoch: 41 | Train: time= 27.2s | Valid: time=  4.7s loss=0.340, TAw acc= 86.5% |
+ Epoch: 42 | Train: time= 27.8s | Valid: time=  5.0s loss=0.338, TAw acc= 86.6% |
+ Epoch: 43 | Train: time= 28.4s | Valid: time=  4.7s loss=0.336, TAw acc= 86.4% |
+ Epoch: 44 | Train: time= 27.6s | Valid: time=  5.1s loss=0.349, TAw acc= 86.0% |
+ Epoch: 45 | Train: time= 28.0s | Valid: time=  4.7s loss=0.341, TAw acc= 86.6% |
+ Epoch: 46 | Train: time= 28.0s | Valid: time=  5.3s loss=0.369, TAw acc= 85.5% |
+ Epoch: 47 | Train: time= 28.4s | Valid: time=  5.0s loss=0.338, TAw acc= 86.3% |
+ Epoch: 48 | Train: time= 27.5s | Valid: time=  5.1s loss=0.329, TAw acc= 87.2% | *
+ Epoch: 49 | Train: time= 28.0s | Valid: time=  5.0s loss=0.333, TAw acc= 86.7% |
+ Epoch: 50 | Train: time= 27.9s | Valid: time=  4.9s loss=0.346, TAw acc= 86.0% |
+ Epoch: 51 | Train: time= 28.2s | Valid: time=  4.7s loss=0.333, TAw acc= 86.9% |
+ Epoch: 52 | Train: time= 28.1s | Valid: time=  4.6s loss=0.327, TAw acc= 86.9% | *
+ Epoch: 53 | Train: time= 27.2s | Valid: time=  5.0s loss=0.337, TAw acc= 86.6% |
+ Epoch: 54 | Train: time= 27.0s | Valid: time=  4.8s loss=0.336, TAw acc= 86.5% |
+ Epoch: 55 | Train: time= 28.1s | Valid: time=  5.0s loss=0.328, TAw acc= 86.9% |
+ Epoch: 56 | Train: time= 28.1s | Valid: time=  4.6s loss=0.336, TAw acc= 87.0% |
+ Epoch: 57 | Train: time= 27.9s | Valid: time=  5.3s loss=0.331, TAw acc= 87.0% |
+ Epoch: 58 | Train: time= 27.7s | Valid: time=  4.6s loss=0.334, TAw acc= 86.5% |
+ Epoch: 59 | Train: time= 27.8s | Valid: time=  5.0s loss=0.327, TAw acc= 86.6% |
+ Epoch: 60 | Train: time= 27.4s | Valid: time=  4.7s loss=0.341, TAw acc= 86.7% |
+ Epoch: 61 | Train: time= 28.8s | Valid: time=  5.2s loss=0.338, TAw acc= 86.4% |
+ Epoch: 62 | Train: time= 28.5s | Valid: time=  5.0s loss=0.349, TAw acc= 86.3% |
+ Epoch: 63 | Train: time= 28.0s | Valid: time=  4.6s loss=0.366, TAw acc= 86.1% |
+ Epoch: 64 | Train: time= 27.6s | Valid: time=  4.9s loss=0.333, TAw acc= 86.7% |
+ Epoch: 65 | Train: time= 28.1s | Valid: time=  4.8s loss=0.321, TAw acc= 87.5% | *
+ Epoch: 66 | Train: time= 27.7s | Valid: time=  4.9s loss=0.353, TAw acc= 85.5% |
+ Epoch: 67 | Train: time= 27.3s | Valid: time=  4.7s loss=0.348, TAw acc= 86.3% |
+ Epoch: 68 | Train: time= 27.3s | Valid: time=  5.2s loss=0.338, TAw acc= 86.5% |
+ Epoch: 69 | Train: time= 27.8s | Valid: time=  4.8s loss=0.328, TAw acc= 87.2% |
+ Epoch: 70 | Train: time= 27.8s | Valid: time=  5.0s loss=0.334, TAw acc= 87.0% |
+ Epoch: 71 | Train: time= 28.0s | Valid: time=  4.7s loss=0.327, TAw acc= 86.5% |
+ Epoch: 72 | Train: time= 27.6s | Valid: time=  4.7s loss=0.328, TAw acc= 87.1% |
+ Epoch: 73 | Train: time= 27.5s | Valid: time=  4.7s loss=0.338, TAw acc= 86.8% |
+ Epoch: 74 | Train: time= 28.7s | Valid: time=  5.2s loss=0.328, TAw acc= 87.2% |
+ Epoch: 75 | Train: time= 27.9s | Valid: time=  4.9s loss=0.344, TAw acc= 86.0% |
+ Epoch: 76 | Train: time= 28.3s | Valid: time=  5.1s loss=0.337, TAw acc= 86.6% |
+ Epoch: 77 | Train: time= 27.8s | Valid: time=  5.1s loss=0.326, TAw acc= 87.1% |
+ Epoch: 78 | Train: time= 27.9s | Valid: time=  4.8s loss=0.334, TAw acc= 86.9% |
+ Epoch: 79 | Train: time= 27.2s | Valid: time=  4.9s loss=0.331, TAw acc= 86.8% |
+ Epoch: 80 | Train: time= 27.6s | Valid: time=  4.7s loss=0.324, TAw acc= 87.1% |
+num_cls : 2
+num_exemplars:  600
+original_exemplars_per_class:  300
+--------------------------------------------------
+--------------------------------------------------
+| Selected 600 train exemplars, time=637.8s
+| Constructed 600 exemplars
+Final memory length:  200
+self.logits length and one shape:  200 (2,)
+Previous classes:  [0 1]
+------------------------------------------------------------------------------------------------------------
+>>> Test on task  0 : loss=0.309 | TAw acc= 87.9%, forg=  0.0%| TAg acc=: 87.9%, forg=  0.0% <<<
+Save at ./results/ACCV_2024_rebuttal/der/tissue/tissuemnist_der_split_dp_fixd_csl_3
+************************************************************************************************************
+Task  1
+************************************************************************************************************
+ Epoch: 1 | Train: time= 13.0s | Valid: time=  3.8s loss=0.403, TAw acc= 85.2% | *
+ Epoch: 2 | Train: time= 13.2s | Valid: time=  3.8s loss=0.347, TAw acc= 85.8% | *
+ Epoch: 3 | Train: time= 13.3s | Valid: time=  4.1s loss=0.366, TAw acc= 83.3% |
+ Epoch: 4 | Train: time= 13.4s | Valid: time=  4.0s loss=0.321, TAw acc= 86.7% | *
+ Epoch: 5 | Train: time= 13.1s | Valid: time=  4.0s loss=0.376, TAw acc= 83.5% |
+ Epoch: 6 | Train: time= 13.2s | Valid: time=  4.2s loss=0.332, TAw acc= 85.3% |
+ Epoch: 7 | Train: time= 13.2s | Valid: time=  4.2s loss=0.319, TAw acc= 86.7% | *
+ Epoch: 8 | Train: time= 13.7s | Valid: time=  3.8s loss=0.336, TAw acc= 85.4% |
+ Epoch: 9 | Train: time= 12.9s | Valid: time=  3.9s loss=0.353, TAw acc= 84.0% |
+ Epoch: 10 | Train: time= 13.1s | Valid: time=  4.1s loss=0.310, TAw acc= 86.7% | *
+ Epoch: 11 | Train: time= 13.3s | Valid: time=  4.1s loss=0.298, TAw acc= 86.7% | *
+ Epoch: 12 | Train: time= 13.3s | Valid: time=  3.7s loss=0.279, TAw acc= 88.6% | *
+ Epoch: 13 | Train: time= 13.3s | Valid: time=  3.8s loss=0.286, TAw acc= 87.7% |
+ Epoch: 14 | Train: time= 13.4s | Valid: time=  4.2s loss=0.294, TAw acc= 87.6% |
+ Epoch: 15 | Train: time= 13.3s | Valid: time=  4.3s loss=0.381, TAw acc= 82.2% |
+ Epoch: 16 | Train: time= 12.7s | Valid: time=  3.9s loss=0.304, TAw acc= 86.6% |
+ Epoch: 17 | Train: time= 13.5s | Valid: time=  4.0s loss=0.314, TAw acc= 86.4% |
+ Epoch: 18 | Train: time= 13.2s | Valid: time=  3.7s loss=0.296, TAw acc= 86.7% |
+ Epoch: 19 | Train: time= 13.2s | Valid: time=  4.0s loss=0.284, TAw acc= 88.4% |
+ Epoch: 20 | Train: time= 13.5s | Valid: time=  4.1s loss=0.406, TAw acc= 80.9% |
+ Epoch: 21 | Train: time= 13.0s | Valid: time=  4.5s loss=0.273, TAw acc= 88.5% | *
+ Epoch: 22 | Train: time= 13.5s | Valid: time=  3.9s loss=0.307, TAw acc= 86.2% |
+ Epoch: 23 | Train: time= 13.4s | Valid: time=  3.8s loss=0.312, TAw acc= 85.4% |
+ Epoch: 24 | Train: time= 13.2s | Valid: time=  3.8s loss=0.273, TAw acc= 88.6% |
+ Epoch: 25 | Train: time= 13.3s | Valid: time=  3.8s loss=0.282, TAw acc= 88.4% |
+ Epoch: 26 | Train: time= 13.3s | Valid: time=  3.8s loss=0.288, TAw acc= 87.1% |
+ Epoch: 27 | Train: time= 13.2s | Valid: time=  4.2s loss=0.363, TAw acc= 83.9% |
+ Epoch: 28 | Train: time= 13.2s | Valid: time=  3.9s loss=0.281, TAw acc= 88.2% |
+ Epoch: 29 | Train: time= 13.4s | Valid: time=  4.2s loss=0.278, TAw acc= 87.7% |
+ Epoch: 30 | Train: time= 13.6s | Valid: time=  3.9s loss=0.297, TAw acc= 87.5% |
+ Epoch: 31 | Train: time= 13.4s | Valid: time=  3.8s loss=0.284, TAw acc= 87.7% |
+ Epoch: 32 | Train: time= 13.5s | Valid: time=  4.0s loss=0.282, TAw acc= 87.8% |
+ Epoch: 33 | Train: time= 13.1s | Valid: time=  4.1s loss=0.314, TAw acc= 85.7% |
+ Epoch: 34 | Train: time= 13.2s | Valid: time=  3.9s loss=0.286, TAw acc= 87.6% |
+ Epoch: 35 | Train: time= 13.1s | Valid: time=  4.0s loss=0.277, TAw acc= 87.9% |
+ Epoch: 36 | Train: time= 13.4s | Valid: time=  3.9s loss=0.281, TAw acc= 87.4% |
+num_cls : 4
+num_exemplars:  600
+original_exemplars_per_class:  150
+--------------------------------------------------
+--------------------------------------------------
+| Selected 299 train exemplars, time=117.6s
+| Constructed 499 exemplars
+Final memory length:  200
+self.logits length and one shape:  200 (4,)
+Previous classes:  [0 1 2 3]
+------------------------------------------------------------------------------------------------------------
+>>> Test on task  0 : loss=8.905 | TAw acc= 84.6%, forg=  3.3%| TAg acc=:  0.0%, forg= 87.9% <<<
+>>> Test on task  1 : loss=0.284 | TAw acc= 87.9%, forg=  0.0%| TAg acc=: 87.9%, forg=  0.0% <<<
+Save at ./results/ACCV_2024_rebuttal/der/tissue/tissuemnist_der_split_dp_fixd_csl_3
+************************************************************************************************************
+Task  2
+************************************************************************************************************
+ Epoch: 1 | Train: time= 12.9s | Valid: time=  3.7s loss=0.980, TAw acc= 46.8% | *
+ Epoch: 2 | Train: time= 13.1s | Valid: time=  3.9s loss=0.713, TAw acc= 55.7% | *
+ Epoch: 3 | Train: time= 12.6s | Valid: time=  3.9s loss=0.661, TAw acc= 57.8% | *
+ Epoch: 4 | Train: time= 12.8s | Valid: time=  4.0s loss=0.607, TAw acc= 64.8% | *
+ Epoch: 5 | Train: time= 13.0s | Valid: time=  3.9s loss=0.644, TAw acc= 62.8% |
+ Epoch: 6 | Train: time= 12.8s | Valid: time=  3.7s loss=0.593, TAw acc= 70.5% | *
+ Epoch: 7 | Train: time= 12.9s | Valid: time=  4.0s loss=0.600, TAw acc= 69.6% |
+ Epoch: 8 | Train: time= 12.6s | Valid: time=  4.1s loss=0.621, TAw acc= 68.9% |
+ Epoch: 9 | Train: time= 12.5s | Valid: time=  3.8s loss=0.539, TAw acc= 73.7% | *
+ Epoch: 10 | Train: time= 12.3s | Valid: time=  3.8s loss=0.587, TAw acc= 73.3% |
+ Epoch: 11 | Train: time= 13.0s | Valid: time=  4.1s loss=0.595, TAw acc= 71.6% |
+ Epoch: 12 | Train: time= 13.0s | Valid: time=  4.1s loss=0.417, TAw acc= 81.7% | *
+ Epoch: 13 | Train: time= 13.1s | Valid: time=  4.1s loss=0.487, TAw acc= 77.8% |
+ Epoch: 14 | Train: time= 12.6s | Valid: time=  4.1s loss=0.737, TAw acc= 68.0% |
+ Epoch: 15 | Train: time= 12.5s | Valid: time=  3.9s loss=0.510, TAw acc= 77.0% |
+ Epoch: 16 | Train: time= 12.8s | Valid: time=  4.1s loss=0.566, TAw acc= 74.2% |
+ Epoch: 17 | Train: time= 12.9s | Valid: time=  4.1s loss=0.494, TAw acc= 76.9% |
+ Epoch: 18 | Train: time= 12.5s | Valid: time=  4.0s loss=0.597, TAw acc= 72.6% |
+ Epoch: 19 | Train: time= 12.5s | Valid: time=  4.1s loss=0.587, TAw acc= 74.5% |
+ Epoch: 20 | Train: time= 13.3s | Valid: time=  3.8s loss=0.743, TAw acc= 68.7% |
+ Epoch: 21 | Train: time= 12.5s | Valid: time=  3.9s loss=0.461, TAw acc= 80.2% |
+ Epoch: 22 | Train: time= 13.2s | Valid: time=  4.1s loss=0.443, TAw acc= 80.4% |
+ Epoch: 23 | Train: time= 12.7s | Valid: time=  4.3s loss=0.409, TAw acc= 82.5% | *
+ Epoch: 24 | Train: time= 12.6s | Valid: time=  4.1s loss=0.407, TAw acc= 82.1% | *
+ Epoch: 25 | Train: time= 12.7s | Valid: time=  3.9s loss=0.495, TAw acc= 78.7% |
+ Epoch: 26 | Train: time= 13.7s | Valid: time=  3.9s loss=0.416, TAw acc= 82.0% |
+ Epoch: 27 | Train: time= 12.7s | Valid: time=  4.1s loss=0.440, TAw acc= 80.7% |
+ Epoch: 28 | Train: time= 13.1s | Valid: time=  4.1s loss=0.377, TAw acc= 83.3% | *
+ Epoch: 29 | Train: time= 12.8s | Valid: time=  4.1s loss=0.539, TAw acc= 76.9% |
+ Epoch: 30 | Train: time= 12.6s | Valid: time=  4.1s loss=0.427, TAw acc= 81.4% |
+ Epoch: 31 | Train: time= 13.0s | Valid: time=  3.9s loss=0.412, TAw acc= 82.6% |
+ Epoch: 32 | Train: time= 12.8s | Valid: time=  4.1s loss=0.555, TAw acc= 76.0% |
+ Epoch: 33 | Train: time= 12.9s | Valid: time=  4.1s loss=0.403, TAw acc= 82.7% |
+ Epoch: 34 | Train: time= 13.0s | Valid: time=  4.1s loss=0.408, TAw acc= 82.2% |
+ Epoch: 35 | Train: time= 12.4s | Valid: time=  4.0s loss=0.408, TAw acc= 83.3% |
+ Epoch: 36 | Train: time= 13.0s | Valid: time=  3.7s loss=0.493, TAw acc= 79.0% |
+ Epoch: 37 | Train: time= 12.8s | Valid: time=  4.0s loss=0.604, TAw acc= 76.4% |
+ Epoch: 38 | Train: time= 12.9s | Valid: time=  4.2s loss=0.471, TAw acc= 79.9% |
+ Epoch: 39 | Train: time= 12.8s | Valid: time=  3.9s loss=0.426, TAw acc= 81.6% |
+ Epoch: 40 | Train: time= 12.8s | Valid: time=  3.8s loss=0.424, TAw acc= 81.7% |
+ Epoch: 41 | Train: time= 12.4s | Valid: time=  3.8s loss=0.533, TAw acc= 78.5% |
+ Epoch: 42 | Train: time= 12.5s | Valid: time=  3.8s loss=0.576, TAw acc= 77.3% |
+ Epoch: 43 | Train: time= 13.0s | Valid: time=  3.8s loss=0.373, TAw acc= 82.8% | *
+ Epoch: 44 | Train: time= 12.8s | Valid: time=  4.0s loss=0.400, TAw acc= 83.0% |
+ Epoch: 45 | Train: time= 12.9s | Valid: time=  3.9s loss=0.459, TAw acc= 79.8% |
+ Epoch: 46 | Train: time= 12.5s | Valid: time=  3.9s loss=0.587, TAw acc= 76.7% |
+ Epoch: 47 | Train: time= 12.8s | Valid: time=  3.8s loss=0.394, TAw acc= 82.5% |
+ Epoch: 48 | Train: time= 13.4s | Valid: time=  3.9s loss=0.453, TAw acc= 80.3% |
+ Epoch: 49 | Train: time= 12.9s | Valid: time=  4.1s loss=0.413, TAw acc= 83.2% |
+ Epoch: 50 | Train: time= 12.7s | Valid: time=  4.2s loss=0.516, TAw acc= 78.0% |
+ Epoch: 51 | Train: time= 12.9s | Valid: time=  4.0s loss=0.611, TAw acc= 75.8% |
+ Epoch: 52 | Train: time= 13.0s | Valid: time=  3.8s loss=0.389, TAw acc= 83.6% |
+ Epoch: 53 | Train: time= 13.0s | Valid: time=  4.0s loss=0.361, TAw acc= 84.4% | *
+ Epoch: 54 | Train: time= 12.7s | Valid: time=  4.1s loss=0.447, TAw acc= 79.9% |
+ Epoch: 55 | Train: time= 12.9s | Valid: time=  4.8s loss=0.508, TAw acc= 79.4% |
+ Epoch: 56 | Train: time= 13.0s | Valid: time=  3.9s loss=0.420, TAw acc= 81.3% |
+ Epoch: 57 | Train: time= 12.7s | Valid: time=  3.9s loss=0.439, TAw acc= 81.7% |
+ Epoch: 58 | Train: time= 12.5s | Valid: time=  3.8s loss=0.526, TAw acc= 78.5% |
+ Epoch: 59 | Train: time= 12.8s | Valid: time=  4.0s loss=0.628, TAw acc= 74.7% |
+ Epoch: 60 | Train: time= 12.8s | Valid: time=  4.2s loss=0.457, TAw acc= 79.8% |
+ Epoch: 61 | Train: time= 12.5s | Valid: time=  3.9s loss=0.380, TAw acc= 84.0% |
+ Epoch: 62 | Train: time= 12.8s | Valid: time=  3.8s loss=0.455, TAw acc= 80.5% |
+ Epoch: 63 | Train: time= 13.2s | Valid: time=  4.2s loss=0.593, TAw acc= 74.7% |
+ Epoch: 64 | Train: time= 13.0s | Valid: time=  4.1s loss=0.518, TAw acc= 77.8% |
+ Epoch: 65 | Train: time= 12.5s | Valid: time=  4.2s loss=0.421, TAw acc= 82.2% |
+ Epoch: 66 | Train: time= 12.7s | Valid: time=  4.0s loss=0.439, TAw acc= 81.1% |
+ Epoch: 67 | Train: time= 12.9s | Valid: time=  3.9s loss=0.356, TAw acc= 84.7% | *
+ Epoch: 68 | Train: time= 13.1s | Valid: time=  4.0s loss=0.667, TAw acc= 73.4% |
+ Epoch: 69 | Train: time= 12.2s | Valid: time=  4.1s loss=0.486, TAw acc= 79.9% |
+ Epoch: 70 | Train: time= 12.9s | Valid: time=  4.0s loss=0.503, TAw acc= 79.5% |
+ Epoch: 71 | Train: time= 12.4s | Valid: time=  3.9s loss=0.397, TAw acc= 83.6% |
+ Epoch: 72 | Train: time= 12.7s | Valid: time=  3.7s loss=0.537, TAw acc= 78.3% |
+ Epoch: 73 | Train: time= 12.9s | Valid: time=  3.9s loss=0.379, TAw acc= 83.9% |
+ Epoch: 74 | Train: time= 12.9s | Valid: time=  4.1s loss=0.381, TAw acc= 83.1% |
+ Epoch: 75 | Train: time= 12.8s | Valid: time=  4.0s loss=0.461, TAw acc= 81.1% |
+ Epoch: 76 | Train: time= 12.7s | Valid: time=  4.0s loss=0.623, TAw acc= 76.6% |
+ Epoch: 77 | Train: time= 12.8s | Valid: time=  3.9s loss=0.529, TAw acc= 77.5% |
+ Epoch: 78 | Train: time= 12.6s | Valid: time=  4.1s loss=0.474, TAw acc= 80.4% |
+ Epoch: 79 | Train: time= 13.1s | Valid: time=  3.8s loss=0.463, TAw acc= 80.1% |
+ Epoch: 80 | Train: time= 12.7s | Valid: time=  4.1s loss=0.545, TAw acc= 78.2% |
+ Epoch: 81 | Train: time= 12.7s | Valid: time=  3.6s loss=0.440, TAw acc= 82.1% |
+ Epoch: 82 | Train: time= 12.7s | Valid: time=  3.8s loss=0.700, TAw acc= 72.6% |
+num_cls : 6
+num_exemplars:  600
+original_exemplars_per_class:  100
+--------------------------------------------------
+--------------------------------------------------
+| Selected 200 train exemplars, time= 71.4s
+| Constructed 400 exemplars
+Final memory length:  200
+self.logits length and one shape:  200 (6,)
+Previous classes:  [0 1 2 3 4 5]
+------------------------------------------------------------------------------------------------------------
+>>> Test on task  0 : loss=17.484 | TAw acc= 84.6%, forg=  3.3%| TAg acc=:  0.0%, forg= 87.9% <<<
+>>> Test on task  1 : loss=9.349 | TAw acc= 76.0%, forg= 12.0%| TAg acc=:  0.0%, forg= 87.9% <<<
+>>> Test on task  2 : loss=0.373 | TAw acc= 84.6%, forg=  0.0%| TAg acc=: 84.6%, forg=  0.0% <<<
+Save at ./results/ACCV_2024_rebuttal/der/tissue/tissuemnist_der_split_dp_fixd_csl_3
+************************************************************************************************************
+Task  3
+************************************************************************************************************
+ Epoch: 1 | Train: time= 31.7s | Valid: time=  4.8s loss=0.610, TAw acc= 68.9% | *
+ Epoch: 2 | Train: time= 31.6s | Valid: time=  5.4s loss=0.547, TAw acc= 68.5% | *
+ Epoch: 3 | Train: time= 30.8s | Valid: time=  5.0s loss=0.507, TAw acc= 72.8% | *
+ Epoch: 4 | Train: time= 31.1s | Valid: time=  4.7s loss=0.506, TAw acc= 72.9% | *
+ Epoch: 5 | Train: time= 30.8s | Valid: time=  5.2s loss=0.488, TAw acc= 73.7% | *
+ Epoch: 6 | Train: time= 31.4s | Valid: time=  5.2s loss=0.484, TAw acc= 74.6% | *
+ Epoch: 7 | Train: time= 31.2s | Valid: time=  5.2s loss=0.475, TAw acc= 75.4% | *
+ Epoch: 8 | Train: time= 30.2s | Valid: time=  4.9s loss=0.455, TAw acc= 76.1% | *
+ Epoch: 9 | Train: time= 31.1s | Valid: time=  5.5s loss=0.445, TAw acc= 77.8% | *
+ Epoch: 10 | Train: time= 32.1s | Valid: time=  5.1s loss=0.440, TAw acc= 77.9% | *
+ Epoch: 11 | Train: time= 30.8s | Valid: time=  4.9s loss=0.434, TAw acc= 78.8% | *
+ Epoch: 12 | Train: time= 31.1s | Valid: time=  4.9s loss=0.422, TAw acc= 80.1% | *
+ Epoch: 13 | Train: time= 31.5s | Valid: time=  5.3s loss=0.426, TAw acc= 79.7% |
+ Epoch: 14 | Train: time= 31.4s | Valid: time=  5.5s loss=0.415, TAw acc= 80.1% | *
+ Epoch: 15 | Train: time= 30.2s | Valid: time=  4.7s loss=0.416, TAw acc= 79.8% |
+ Epoch: 16 | Train: time= 30.6s | Valid: time=  5.1s loss=0.410, TAw acc= 80.2% | *
+ Epoch: 17 | Train: time= 31.2s | Valid: time=  5.2s loss=0.414, TAw acc= 80.5% |
+ Epoch: 18 | Train: time= 31.0s | Valid: time=  4.9s loss=0.416, TAw acc= 79.8% |
+ Epoch: 19 | Train: time= 31.0s | Valid: time=  5.0s loss=0.424, TAw acc= 79.6% |
+ Epoch: 20 | Train: time= 30.8s | Valid: time=  5.3s loss=0.458, TAw acc= 76.3% |
+ Epoch: 21 | Train: time= 30.9s | Valid: time=  5.3s loss=0.399, TAw acc= 81.3% | *
+ Epoch: 22 | Train: time= 31.1s | Valid: time=  4.8s loss=0.395, TAw acc= 81.6% | *
+ Epoch: 23 | Train: time= 31.2s | Valid: time=  5.2s loss=0.397, TAw acc= 81.3% |
+ Epoch: 24 | Train: time= 31.3s | Valid: time=  5.6s loss=0.475, TAw acc= 77.0% |
+ Epoch: 25 | Train: time= 30.7s | Valid: time=  5.2s loss=0.395, TAw acc= 81.5% | *
+ Epoch: 26 | Train: time= 34.5s | Valid: time=  5.9s loss=0.399, TAw acc= 80.6% |
+ Epoch: 27 | Train: time= 33.6s | Valid: time=  5.9s loss=0.403, TAw acc= 80.6% |
+ Epoch: 28 | Train: time= 34.1s | Valid: time=  5.8s loss=0.488, TAw acc= 75.4% |
+ Epoch: 29 | Train: time= 34.0s | Valid: time=  5.8s loss=0.405, TAw acc= 80.5% |
+ Epoch: 30 | Train: time= 34.2s | Valid: time=  5.8s loss=0.389, TAw acc= 81.7% | *
+ Epoch: 31 | Train: time= 33.9s | Valid: time=  5.9s loss=0.392, TAw acc= 81.4% |
+ Epoch: 32 | Train: time= 34.3s | Valid: time=  5.8s loss=0.384, TAw acc= 82.2% | *
+ Epoch: 33 | Train: time= 34.2s | Valid: time=  5.9s loss=0.400, TAw acc= 80.8% |
+ Epoch: 34 | Train: time= 34.7s | Valid: time=  5.8s loss=0.381, TAw acc= 82.0% | *
+ Epoch: 35 | Train: time= 34.5s | Valid: time=  5.8s loss=0.393, TAw acc= 81.1% |
+ Epoch: 36 | Train: time= 33.5s | Valid: time=  5.8s loss=0.406, TAw acc= 80.6% |
+ Epoch: 37 | Train: time= 34.3s | Valid: time=  5.8s loss=0.423, TAw acc= 79.5% |
+ Epoch: 38 | Train: time= 34.5s | Valid: time=  5.9s loss=0.410, TAw acc= 80.5% |
+ Epoch: 39 | Train: time= 34.5s | Valid: time=  5.8s loss=0.383, TAw acc= 82.0% |
+ Epoch: 40 | Train: time= 34.3s | Valid: time=  5.8s loss=0.403, TAw acc= 81.1% |
+ Epoch: 41 | Train: time= 34.4s | Valid: time=  5.9s loss=0.390, TAw acc= 81.9% |
+ Epoch: 42 | Train: time= 34.1s | Valid: time=  5.2s loss=0.426, TAw acc= 79.2% |
+ Epoch: 43 | Train: time= 34.1s | Valid: time=  5.9s loss=0.421, TAw acc= 80.6% |
+ Epoch: 44 | Train: time= 34.1s | Valid: time=  5.5s loss=0.383, TAw acc= 81.8% |
+ Epoch: 45 | Train: time= 34.4s | Valid: time=  5.2s loss=0.392, TAw acc= 82.0% |
+ Epoch: 46 | Train: time= 34.3s | Valid: time=  5.3s loss=0.373, TAw acc= 83.1% | *
+ Epoch: 47 | Train: time= 33.9s | Valid: time=  5.8s loss=0.380, TAw acc= 81.9% |
+ Epoch: 48 | Train: time= 34.4s | Valid: time=  5.7s loss=0.375, TAw acc= 82.8% |
+ Epoch: 49 | Train: time= 34.2s | Valid: time=  5.8s loss=0.374, TAw acc= 81.9% |
+ Epoch: 50 | Train: time= 34.1s | Valid: time=  5.9s loss=0.402, TAw acc= 81.1% |
+ Epoch: 51 | Train: time= 34.1s | Valid: time=  5.9s loss=0.378, TAw acc= 82.2% |
+ Epoch: 52 | Train: time= 33.9s | Valid: time=  5.7s loss=0.388, TAw acc= 82.2% |
+ Epoch: 53 | Train: time= 33.8s | Valid: time=  5.8s loss=0.399, TAw acc= 81.4% |
+ Epoch: 54 | Train: time= 34.2s | Valid: time=  5.9s loss=0.379, TAw acc= 83.0% |
+ Epoch: 55 | Train: time= 34.4s | Valid: time=  5.7s loss=0.371, TAw acc= 82.4% | *
+ Epoch: 56 | Train: time= 34.2s | Valid: time=  5.2s loss=0.377, TAw acc= 82.4% |
+ Epoch: 57 | Train: time= 34.4s | Valid: time=  5.9s loss=0.381, TAw acc= 82.3% |
+ Epoch: 58 | Train: time= 34.2s | Valid: time=  5.5s loss=0.371, TAw acc= 82.6% |
+ Epoch: 59 | Train: time= 34.5s | Valid: time=  5.9s loss=0.378, TAw acc= 82.4% |
+ Epoch: 60 | Train: time= 34.4s | Valid: time=  5.7s loss=0.393, TAw acc= 81.9% |
+ Epoch: 61 | Train: time= 34.2s | Valid: time=  5.9s loss=0.366, TAw acc= 82.7% | *
+ Epoch: 62 | Train: time= 34.1s | Valid: time=  5.8s loss=0.367, TAw acc= 83.0% |
+ Epoch: 63 | Train: time= 35.0s | Valid: time=  5.8s loss=0.371, TAw acc= 83.1% |
+ Epoch: 64 | Train: time= 34.3s | Valid: time=  5.9s loss=0.373, TAw acc= 82.8% |
+ Epoch: 65 | Train: time= 34.9s | Valid: time=  5.7s loss=0.361, TAw acc= 83.1% | *
+ Epoch: 66 | Train: time= 34.0s | Valid: time=  5.8s loss=0.368, TAw acc= 83.3% |
+ Epoch: 67 | Train: time= 34.9s | Valid: time=  5.8s loss=0.371, TAw acc= 82.8% |
+ Epoch: 68 | Train: time= 34.2s | Valid: time=  5.8s loss=0.383, TAw acc= 82.1% |
+ Epoch: 69 | Train: time= 34.3s | Valid: time=  5.8s loss=0.364, TAw acc= 83.4% |
+ Epoch: 70 | Train: time= 34.8s | Valid: time=  5.9s loss=0.368, TAw acc= 83.4% |
+ Epoch: 71 | Train: time= 34.7s | Valid: time=  5.4s loss=0.379, TAw acc= 82.1% |
+ Epoch: 72 | Train: time= 34.5s | Valid: time=  5.7s loss=0.382, TAw acc= 82.2% |
+ Epoch: 73 | Train: time= 34.6s | Valid: time=  5.7s loss=0.367, TAw acc= 83.0% |
+ Epoch: 74 | Train: time= 34.0s | Valid: time=  5.9s loss=0.386, TAw acc= 81.6% |
+ Epoch: 75 | Train: time= 34.3s | Valid: time=  5.6s loss=0.362, TAw acc= 83.6% |
+ Epoch: 76 | Train: time= 34.3s | Valid: time=  5.0s loss=0.361, TAw acc= 83.7% |
+ Epoch: 77 | Train: time= 33.6s | Valid: time=  5.2s loss=0.369, TAw acc= 83.2% |
+ Epoch: 78 | Train: time= 34.0s | Valid: time=  5.7s loss=0.368, TAw acc= 82.8% |
+ Epoch: 79 | Train: time= 34.2s | Valid: time=  5.8s loss=0.366, TAw acc= 83.4% |
+ Epoch: 80 | Train: time= 34.0s | Valid: time=  5.8s loss=0.358, TAw acc= 84.3% | *
+ Epoch: 81 | Train: time= 34.4s | Valid: time=  5.8s loss=0.411, TAw acc= 80.2% |
+ Epoch: 82 | Train: time= 34.0s | Valid: time=  5.4s loss=0.364, TAw acc= 83.5% |
+ Epoch: 83 | Train: time= 33.8s | Valid: time=  5.9s loss=0.366, TAw acc= 83.8% |
+ Epoch: 84 | Train: time= 34.8s | Valid: time=  5.8s loss=0.369, TAw acc= 83.2% |
+ Epoch: 85 | Train: time= 34.4s | Valid: time=  5.0s loss=0.364, TAw acc= 83.4% |
+ Epoch: 86 | Train: time= 34.4s | Valid: time=  5.8s loss=0.408, TAw acc= 80.7% |
+ Epoch: 87 | Train: time= 34.0s | Valid: time=  5.7s loss=0.362, TAw acc= 83.2% |
+ Epoch: 88 | Train: time= 34.3s | Valid: time=  5.9s loss=0.379, TAw acc= 82.4% |
+ Epoch: 89 | Train: time= 34.4s | Valid: time=  5.6s loss=0.359, TAw acc= 83.5% |
+ Epoch: 90 | Train: time= 34.6s | Valid: time=  5.8s loss=0.371, TAw acc= 83.5% |
+ Epoch: 91 | Train: time= 34.9s | Valid: time=  5.8s loss=0.370, TAw acc= 83.3% |
+ Epoch: 92 | Train: time= 34.2s | Valid: time=  5.9s loss=0.356, TAw acc= 84.3% | *
+ Epoch: 93 | Train: time= 34.2s | Valid: time=  5.5s loss=0.351, TAw acc= 84.1% | *
+ Epoch: 94 | Train: time= 33.9s | Valid: time=  5.8s loss=0.365, TAw acc= 83.9% |
+ Epoch: 95 | Train: time= 34.3s | Valid: time=  5.7s loss=0.361, TAw acc= 83.7% |
+ Epoch: 96 | Train: time= 34.4s | Valid: time=  5.8s loss=0.374, TAw acc= 82.8% |
+ Epoch: 97 | Train: time= 34.4s | Valid: time=  5.5s loss=0.360, TAw acc= 83.2% |
+ Epoch: 98 | Train: time= 34.2s | Valid: time=  5.8s loss=0.384, TAw acc= 82.8% |
+ Epoch: 99 | Train: time= 33.9s | Valid: time=  5.8s loss=0.368, TAw acc= 83.3% |
+ Epoch: 100 | Train: time= 34.0s | Valid: time=  5.8s loss=0.358, TAw acc= 84.2% |
+num_cls : 8
+num_exemplars:  600
+original_exemplars_per_class:  75
+--------------------------------------------------
+--------------------------------------------------
+| Selected 150 train exemplars, time=136.0s
+| Constructed 350 exemplars
+Final memory length:  200
+self.logits length and one shape:  200 (8,)
+Previous classes:  [0 1 2 3 4 5 6 7]
+------------------------------------------------------------------------------------------------------------
+>>> Test on task  0 : loss=26.029 | TAw acc= 84.6%, forg=  3.3%| TAg acc=:  0.0%, forg= 87.9% <<<
+>>> Test on task  1 : loss=18.358 | TAw acc= 73.8%, forg= 14.1%| TAg acc=:  0.0%, forg= 87.9% <<<
+>>> Test on task  2 : loss=11.156 | TAw acc= 52.6%, forg= 31.9%| TAg acc=:  0.0%, forg= 84.6% <<<
+>>> Test on task  3 : loss=0.360 | TAw acc= 83.5%, forg=  0.0%| TAg acc=: 83.5%, forg=  0.0% <<<
+Save at ./results/ACCV_2024_rebuttal/der/tissue/tissuemnist_der_split_dp_fixd_csl_3
+************************************************************************************************************
+TAw Acc
+	87.89%  0.00%  0.00%  0.00% 	Avg.:87.89% 
+	84.63% 87.92%  0.00%  0.00% 	Avg.:86.27% 
+	84.63% 75.96% 84.58%  0.00% 	Avg.:81.72% 
+	84.63% 73.80% 52.64% 83.46% 	Avg.:73.63% 
+TAw Acc result
+87.89	86.27	81.72	73.63	
+************************************************************************************************************
+TAg Acc
+	87.89%  0.00%  0.00%  0.00% 	Avg.:87.89% 
+	 0.00% 87.92%  0.00%  0.00% 	Avg.:43.96% 
+	 0.00%  0.00% 84.58%  0.00% 	Avg.:28.19% 
+	 0.00%  0.00%  0.00% 83.46% 	Avg.:20.86% 
+TAg Acc result
+87.89	43.96	28.19	20.86	
+************************************************************************************************************
+TAw Forg
+	 0.00%  0.00%  0.00%  0.00% 
+	 3.26%  0.00%  0.00%  0.00% 	Avg.: 3.26% 
+	 3.26% 11.96%  0.00%  0.00% 	Avg.: 7.61% 
+	 3.26% 14.12% 31.94%  0.00% 	Avg.:16.44% 
+TAw Forg result
+ 3.26	 7.61	16.44	
+************************************************************************************************************
+TAg Forg
+	 0.00%  0.00%  0.00%  0.00% 
+	87.89%  0.00%  0.00%  0.00% 	Avg.:87.89% 
+	87.89% 87.92%  0.00%  0.00% 	Avg.:87.91% 
+	87.89% 87.92% 84.58%  0.00% 	Avg.:86.80% 
+TAg Forg result
+87.89	87.91	86.80	
+************************************************************************************************************
+[Elapsed time = 2.7 h]
+Done!

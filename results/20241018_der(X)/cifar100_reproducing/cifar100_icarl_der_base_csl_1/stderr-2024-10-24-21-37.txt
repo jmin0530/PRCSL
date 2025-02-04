@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 312, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 198, in main
+    trn_loader, val_loader, tst_loader, taskcla = get_loaders(args.datasets, args.num_tasks, args.nc_first_task,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader.py", line 41, in get_loaders
+    trn_dset, val_dset, tst_dset, curtaskcla = get_datasets(cur_dataset, dc['path'], num_tasks, nc_first_task,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader.py", line 173, in get_datasets
+    all_data, taskcla, class_indices = memd.get_data(trn_data, tst_data, validation=validation,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/memory_dataset.py", line 137, in get_data
+    data[tt][split]['x'] = np.asarray(data[tt][split]['x'])
+KeyboardInterrupt

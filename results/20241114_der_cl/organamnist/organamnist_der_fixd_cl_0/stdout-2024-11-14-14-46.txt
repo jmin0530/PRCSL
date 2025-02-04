@@ -1,0 +1,42 @@
+Using downloaded and verified file: ./data/organamnist/organamnist.npz
+Using downloaded and verified file: ./data/organamnist/organamnist.npz
+num params: 466815
+[(0, 3), (1, 3), (2, 3), (3, 2)]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+| Epoch   1, time= 18.3s | Train: skip eval | Valid: time=  0.2s loss=1.540, TAw acc=  0.0% | lr: 0.0300
+| Epoch   2, time= 11.5s | Train: skip eval | Valid: time=  0.3s loss=0.312, TAw acc=  0.0% | lr: 0.0300
+| Epoch   3, time= 11.7s | Train: skip eval | Valid: time=  0.2s loss=0.220, TAw acc=  0.0% | lr: 0.0300
+| Epoch   4, time= 12.5s | Train: skip eval | Valid: time=  0.2s loss=0.235, TAw acc=  0.0% | lr: 0.0300
+| Epoch   5, time= 12.9s | Train: skip eval | Valid: time=  0.3s loss=0.223, TAw acc=  0.0% | lr: 0.0300
+| Epoch   6, time= 12.8s | Train: skip eval | Valid: time=  0.3s loss=0.169, TAw acc=  0.0% | lr: 0.0300
+| Epoch   7, time= 13.1s | Train: skip eval | Valid: time=  0.3s loss=0.097, TAw acc=  0.0% | lr: 0.0300
+| Epoch   8, time= 12.9s | Train: skip eval | Valid: time=  0.2s loss=0.082, TAw acc=  0.0% | lr: 0.0300
+| Epoch   9, time= 12.9s | Train: skip eval | Valid: time=  0.2s loss=0.075, TAw acc=  0.0% | lr: 0.0300
+| Epoch  10, time= 12.4s | Train: skip eval | Valid: time=  0.2s loss=0.082, TAw acc=  0.0% | lr: 0.0300
+| Epoch  11, time= 12.9s | Train: skip eval | Valid: time=  0.2s loss=0.096, TAw acc=  0.0% | lr: 0.0300
+| Epoch  12, time= 12.6s | Train: skip eval | Valid: time=  0.2s loss=0.056, TAw acc=  0.0% | lr: 0.0300
+| Epoch  13, time= 12.2s | Train: skip eval | Valid: time=  0.2s loss=0.065, TAw acc=  0.0% | lr: 0.0300
+| Epoch  14, time= 12.6s | Train: skip eval | Valid: time=  0.2s loss=0.728, TAw acc=  0.0% | lr: 0.0300
+| Epoch  15, time= 12.4s | Train: skip eval | Valid: time=  0.3s loss=0.049, TAw acc=  0.0% | lr: 0.0300
+| Epoch  16, time= 12.5s | Train: skip eval | Valid: time=  0.4s loss=0.076, TAw acc=  0.0% | lr: 0.0300
+| Epoch  17, time= 12.7s | Train: skip eval | Valid: time=  0.3s loss=0.122, TAw acc=  0.0% | lr: 0.0300
+| Epoch  18, time= 12.1s | Train: skip eval | Valid: time=  0.2s loss=0.047, TAw acc=  0.0% | lr: 0.0300
+| Epoch  19, time= 12.9s | Train: skip eval | Valid: time=  0.2s loss=0.039, TAw acc=  0.0% | lr: 0.0300
+| Epoch  20, time= 12.4s | Train: skip eval | Valid: time=  0.2s loss=0.038, TAw acc=  0.0% | lr: 0.0300
+| Epoch  21, time= 12.4s | Train: skip eval | Valid: time=  0.3s loss=0.162, TAw acc=  0.0% | lr: 0.0300
+| Epoch  22, time= 12.1s | Train: skip eval | Valid: time=  0.2s loss=1.293, TAw acc=  0.0% | lr: 0.0300
+| Epoch  23, time= 12.5s | Train: skip eval | Valid: time=  0.2s loss=0.041, TAw acc=  0.0% | lr: 0.0300
+| Epoch  24, time= 12.9s | Train: skip eval | Valid: time=  0.2s loss=0.038, TAw acc=  0.0% | lr: 0.0300
+| Epoch  25, time= 12.8s | Train: skip eval | Valid: time=  0.3s loss=0.073, TAw acc=  0.0% | lr: 0.0300
+| Epoch  26, time= 12.9s | Train: skip eval | Valid: time=  0.3s loss=0.036, TAw acc=  0.0% | lr: 0.0300
+| Epoch  27, time= 12.8s | Train: skip eval | Valid: time=  0.2s loss=0.032, TAw acc=  0.0% | lr: 0.0300
+| Epoch  28, time= 12.7s | Train: skip eval | Valid: time=  0.3s loss=0.031, TAw acc=  0.0% | lr: 0.0300
+| Epoch  29, time= 12.9s | Train: skip eval | Valid: time=  0.2s loss=0.030, TAw acc=  0.0% | lr: 0.0300
+| Epoch  30, time= 11.8s | Train: skip eval | Valid: time=  0.2s loss=0.032, TAw acc=  0.0% | lr: 0.0300
+| Epoch  31, time= 12.3s | Train: skip eval | Valid: time=  0.2s loss=0.062, TAw acc=  0.0% | lr: 0.0300
+| Epoch  32, time= 12.7s | Train: skip eval | Valid: time=  0.3s loss=0.032, TAw acc=  0.0% | lr: 0.0300
+| Epoch  33, time= 12.6s | Train: skip eval | Valid: time=  0.3s loss=1.954, TAw acc=  0.0% | lr: 0.0300
+| Epoch  34, time= 11.8s | Train: skip eval | Valid: time=  0.3s loss=0.113, TAw acc=  0.0% | lr: 0.0300
+| Epoch  35, time= 12.5s | Train: skip eval | Valid: time=  0.2s loss=0.022, TAw acc=  0.0% | lr: 0.0100

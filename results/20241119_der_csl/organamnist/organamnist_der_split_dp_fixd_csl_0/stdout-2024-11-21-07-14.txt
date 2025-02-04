@@ -1,0 +1,59 @@
+Using downloaded and verified file: ./data/organamnist/organamnist.npz
+Using downloaded and verified file: ./data/organamnist/organamnist.npz
+Taskcla:  [(0, 3), (1, 3), (2, 3), (3, 2)]
+Number of clients each task:  [10, 10, 10, 10]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+ Epoch: 1 | Train: time= 16.8s | Valid: time=  5.4s loss=0.815, TAw acc=  0.0% |
+ Epoch: 2 | Train: time= 10.8s | Valid: time=  5.4s loss=1.254, TAw acc=  0.0% |
+ Epoch: 3 | Train: time= 10.9s | Valid: time=  5.5s loss=0.244, TAw acc=  0.0% |
+ Epoch: 4 | Train: time= 10.9s | Valid: time=  5.4s loss=0.215, TAw acc=  0.0% |
+ Epoch: 5 | Train: time= 10.6s | Valid: time=  5.6s loss=0.156, TAw acc=  0.0% |
+ Epoch: 6 | Train: time= 10.5s | Valid: time=  5.7s loss=0.992, TAw acc=  0.0% |
+ Epoch: 7 | Train: time= 11.1s | Valid: time=  5.2s loss=0.143, TAw acc=  0.0% |
+ Epoch: 8 | Train: time= 10.8s | Valid: time=  5.2s loss=0.481, TAw acc=  0.0% |
+ Epoch: 9 | Train: time= 10.8s | Valid: time=  5.4s loss=0.154, TAw acc=  0.0% |
+ Epoch: 10 | Train: time= 11.0s | Valid: time=  5.5s loss=0.091, TAw acc=  0.0% |
+ Epoch: 11 | Train: time= 11.1s | Valid: time=  5.5s loss=0.101, TAw acc=  0.0% |
+ Epoch: 12 | Train: time= 11.2s | Valid: time=  5.6s loss=0.115, TAw acc=  0.0% |
+ Epoch: 13 | Train: time= 10.8s | Valid: time=  5.4s loss=0.066, TAw acc=  0.0% |
+ Epoch: 14 | Train: time= 11.1s | Valid: time=  5.2s loss=0.088, TAw acc=  0.0% |
+ Epoch: 15 | Train: time= 10.7s | Valid: time=  5.3s loss=0.253, TAw acc=  0.0% |
+ Epoch: 16 | Train: time= 10.5s | Valid: time=  5.6s loss=0.081, TAw acc=  0.0% |
+ Epoch: 17 | Train: time= 10.6s | Valid: time=  5.5s loss=0.075, TAw acc=  0.0% |
+ Epoch: 18 | Train: time= 11.0s | Valid: time=  5.5s loss=0.368, TAw acc=  0.0% |
+ Epoch: 19 | Train: time= 10.5s | Valid: time=  5.6s loss=0.059, TAw acc=  0.0% |
+ Epoch: 20 | Train: time= 10.2s | Valid: time=  5.6s loss=0.045, TAw acc=  0.0% |
+ Epoch: 21 | Train: time= 10.6s | Valid: time=  5.5s loss=0.092, TAw acc=  0.0% |
+ Epoch: 22 | Train: time= 10.5s | Valid: time=  5.5s loss=0.148, TAw acc=  0.0% |
+ Epoch: 23 | Train: time= 10.7s | Valid: time=  5.4s loss=0.151, TAw acc=  0.0% |
+ Epoch: 24 | Train: time= 10.8s | Valid: time=  5.1s loss=0.078, TAw acc=  0.0% |
+ Epoch: 25 | Train: time= 10.8s | Valid: time=  5.3s loss=0.643, TAw acc=  0.0% |
+ Epoch: 26 | Train: time= 11.0s | Valid: time=  5.5s loss=0.064, TAw acc=  0.0% |
+ Epoch: 27 | Train: time= 10.9s | Valid: time=  5.2s loss=0.079, TAw acc=  0.0% |
+ Epoch: 28 | Train: time= 10.8s | Valid: time=  5.5s loss=0.074, TAw acc=  0.0% |
+ Epoch: 29 | Train: time= 10.8s | Valid: time=  5.4s loss=0.040, TAw acc=  0.0% |
+ Epoch: 30 | Train: time= 10.7s | Valid: time=  5.1s loss=0.054, TAw acc=  0.0% |
+ Epoch: 31 | Train: time= 10.8s | Valid: time=  5.2s loss=0.063, TAw acc=  0.0% |
+ Epoch: 32 | Train: time= 10.8s | Valid: time=  5.5s loss=0.129, TAw acc=  0.0% |
+ Epoch: 33 | Train: time= 10.7s | Valid: time=  5.4s loss=0.043, TAw acc=  0.0% |
+ Epoch: 34 | Train: time= 10.7s | Valid: time=  5.5s loss=0.029, TAw acc=  0.0% |
+ Epoch: 35 | Train: time= 10.9s | Valid: time=  5.5s loss=0.025, TAw acc=  0.0% |
+ Epoch: 36 | Train: time= 10.4s | Valid: time=  5.5s loss=0.023, TAw acc=  0.0% |
+ Epoch: 37 | Train: time= 10.6s | Valid: time=  5.2s loss=0.031, TAw acc=  0.0% |
+ Epoch: 38 | Train: time= 10.6s | Valid: time=  5.7s loss=0.027, TAw acc=  0.0% |
+ Epoch: 39 | Train: time= 10.7s | Valid: time=  5.5s loss=0.028, TAw acc=  0.0% |
+ Epoch: 40 | Train: time= 10.8s | Valid: time=  5.4s loss=0.028, TAw acc=  0.0% |
+ Epoch: 41 | Train: time= 10.8s | Valid: time=  5.5s loss=0.029, TAw acc=  0.0% |
+ Epoch: 42 | Train: time= 10.7s | Valid: time=  5.1s loss=0.033, TAw acc=  0.0% |
+ Epoch: 43 | Train: time= 10.6s | Valid: time=  5.0s loss=0.025, TAw acc=  0.0% |
+ Epoch: 44 | Train: time= 10.7s | Valid: time=  5.2s loss=0.044, TAw acc=  0.0% |
+ Epoch: 45 | Train: time= 10.7s | Valid: time=  5.2s loss=0.026, TAw acc=  0.0% |
+ Epoch: 46 | Train: time= 11.0s | Valid: time=  5.1s loss=0.027, TAw acc=  0.0% |
+ Epoch: 47 | Train: time= 10.4s | Valid: time=  5.0s loss=0.026, TAw acc=  0.0% |
+ Epoch: 48 | Train: time= 10.2s | Valid: time=  4.9s loss=0.024, TAw acc=  0.0% |
+ Epoch: 49 | Train: time= 10.0s | Valid: time=  5.0s loss=0.025, TAw acc=  0.0% |
+ Epoch: 50 | Train: time= 10.2s | Valid: time=  4.9s loss=0.029, TAw acc=  0.0% |
+num_cls : 0
+num_exemplars:  600

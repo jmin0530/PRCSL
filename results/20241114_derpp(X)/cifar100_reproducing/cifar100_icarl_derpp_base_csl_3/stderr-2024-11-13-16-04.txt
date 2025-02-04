@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 312, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 260, in main
+    appr.train(t, trn_loader[t], val_loader[t])
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 55, in train
+    self.train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/derpp.py", line 70, in train_loop
+    super().train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning_der.py", line 46, in train_loop
+    self.train_epoch(t, trn_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/derpp.py", line 106, in train_epoch
+    loss_ce = 0.5 * self.criterion(t, outputs_buff, buff_labels)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/derpp.py", line 187, in criterion
+    loss = torch.nn.functional.cross_entropy(torch.cat(outputs, dim=1), targets)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/functional.py", line 3014, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+RuntimeError: "nll_loss_forward_reduce_cuda_kernel_2d_index" not implemented for 'Float'

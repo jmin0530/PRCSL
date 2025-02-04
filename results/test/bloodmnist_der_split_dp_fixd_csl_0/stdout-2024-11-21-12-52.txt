@@ -1,0 +1,10 @@
+Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
+Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
+Taskcla:  [(0, 2), (1, 2), (2, 2), (3, 2)]
+Number of clients each task:  [10, 10, 10, 10]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+ Epoch: 1 | Train: time= 13.8s | Valid: time=  4.5s loss=0.345, TAw acc=  0.0% |
+ Epoch: 2 | Train: time=  9.4s | Valid: time=  4.6s loss=0.093, TAw acc=  0.0% |
+model.task_cls type:  <class 'list'>

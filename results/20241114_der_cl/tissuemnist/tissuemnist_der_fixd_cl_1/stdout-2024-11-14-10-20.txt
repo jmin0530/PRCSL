@@ -1,0 +1,2 @@
+Using downloaded and verified file: ./data/tissuemnist/tissuemnist.npz
+Using downloaded and verified file: ./data/tissuemnist/tissuemnist.npz

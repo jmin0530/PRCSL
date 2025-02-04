@@ -1,0 +1,13 @@
+Files already downloaded and verified
+Files already downloaded and verified
+Classifier output dim:  100
+num params: 11789612
+[(0, 10), (1, 10), (2, 10), (3, 10), (4, 10), (5, 10), (6, 10), (7, 10), (8, 10), (9, 10)]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+| Epoch   1, time= 16.8s | Train: skip eval | Valid: time=  0.3s loss=1.892, TAw acc=  0.0% | lr: 0.0300
+| Epoch   2, time=  9.7s | Train: skip eval | Valid: time=  0.3s loss=1.813, TAw acc=  0.0% | lr: 0.0300
+| Epoch   3, time= 10.0s | Train: skip eval | Valid: time=  0.2s loss=1.524, TAw acc=  0.0% | lr: 0.0300
+| Epoch   4, time= 10.2s | Train: skip eval | Valid: time=  0.3s loss=1.311, TAw acc=  0.0% | lr: 0.0300
+| Epoch   5, time=  9.8s | Train: skip eval | Valid: time=  0.3s loss=1.367, TAw acc=  0.0% | lr: 0.0300

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 300, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 248, in main
+    appr.train(t, trn_loader[t], val_loader[t])
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 55, in train
+    self.train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 66, in train_loop
+    super().train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 72, in train_loop
+    self.train_epoch(t, trn_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 98, in train_epoch
+    num_avail_samples = min(self.num_seen_examples, num_avail_samples)
+UnboundLocalError: local variable 'num_avail_samples' referenced before assignment

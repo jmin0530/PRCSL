@@ -1,0 +1,135 @@
+Files already downloaded and verified
+Files already downloaded and verified
+Classifier output dim:  100
+num params: 11220132
+[(0, 10), (1, 10), (2, 10), (3, 10), (4, 10), (5, 10), (6, 10), (7, 10), (8, 10), (9, 10)]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+LLL_Net(
+  (model): ResNet_cifar(
+    (conv1): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (conv2_x): Sequential(
+      (0): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential()
+      )
+      (1): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential()
+      )
+    )
+    (conv3_x): Sequential(
+      (0): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential()
+      )
+    )
+    (conv4_x): Sequential(
+      (0): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential(
+          (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential()
+      )
+    )
+    (conv5_x): Sequential(
+      (0): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (residual_function): Sequential(
+          (0): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (4): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (shortcut): Sequential()
+      )
+    )
+    (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+    (fc): Sequential()
+  )
+  (heads): ModuleList(
+    (0): Linear(in_features=512, out_features=100, bias=True)
+  )
+)
+| Epoch   1, time= 17.5s | Train: skip eval | Valid: time=  0.3s loss=2.014, TAw acc=  0.0% | lr: 0.0300
+| Epoch   2, time= 10.3s | Train: skip eval | Valid: time=  0.5s loss=1.762, TAw acc=  0.0% | lr: 0.0300
+| Epoch   3, time= 10.2s | Train: skip eval | Valid: time=  0.3s loss=1.890, TAw acc=  0.0% | lr: 0.0300
+| Epoch   4, time= 10.7s | Train: skip eval | Valid: time=  0.4s loss=1.355, TAw acc=  0.0% | lr: 0.0300
+| Epoch   5, time= 11.0s | Train: skip eval | Valid: time=  0.3s loss=1.267, TAw acc=  0.0% | lr: 0.0300
+| Epoch   6, time= 10.3s | Train: skip eval | Valid: time=  0.4s loss=1.133, TAw acc=  0.0% | lr: 0.0300
+| Epoch   7, time= 10.4s | Train: skip eval | Valid: time=  0.3s loss=1.701, TAw acc=  0.0% | lr: 0.0300
+| Epoch   8, time= 10.6s | Train: skip eval | Valid: time=  0.2s loss=1.090, TAw acc=  0.0% | lr: 0.0300
+| Epoch   9, time= 10.8s | Train: skip eval | Valid: time=  0.4s loss=1.208, TAw acc=  0.0% | lr: 0.0300
+| Epoch  10, time= 10.6s | Train: skip eval | Valid: time=  0.3s loss=1.154, TAw acc=  0.0% | lr: 0.0300
+| Epoch  11, time= 10.6s | Train: skip eval | Valid: time=  0.3s loss=1.174, TAw acc=  0.0% | lr: 0.0300
+| Epoch  12, time= 10.9s | Train: skip eval | Valid: time=  0.3s loss=0.948, TAw acc=  0.0% | lr: 0.0300
+| Epoch  13, time= 10.1s | Train: skip eval | Valid: time=  0.3s loss=1.500, TAw acc=  0.0% | lr: 0.0300
+| Epoch  14, time= 10.5s | Train: skip eval | Valid: time=  0.3s loss=0.953, TAw acc=  0.0% | lr: 0.0300
+| Epoch  15, time= 10.1s | Train: skip eval | Valid: time=  0.3s loss=0.843, TAw acc=  0.0% | lr: 0.0300
+| Epoch  16, time= 10.3s | Train: skip eval | Valid: time=  0.3s loss=1.059, TAw acc=  0.0% | lr: 0.0300

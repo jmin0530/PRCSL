@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 312, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 198, in main
+    trn_loader, val_loader, tst_loader, taskcla = get_loaders(args.datasets, args.num_tasks, args.nc_first_task,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader.py", line 41, in get_loaders
+    trn_dset, val_dset, tst_dset, curtaskcla = get_datasets(cur_dataset, dc['path'], num_tasks, nc_first_task,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader.py", line 168, in get_datasets
+    tvcifar_trn = TorchVisionCIFAR100(path, train=True, download=True)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torchvision/datasets/cifar.py", line 82, in __init__
+    entry = pickle.load(f, encoding="latin1")
+KeyboardInterrupt

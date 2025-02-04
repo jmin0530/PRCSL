@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 295, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 240, in main
+    net.to(device)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+KeyboardInterrupt

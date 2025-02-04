@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 312, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 198, in main
+    trn_loader, val_loader, tst_loader, taskcla = get_loaders(args.datasets, args.num_tasks, args.nc_first_task,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader.py", line 41, in get_loaders
+    trn_dset, val_dset, tst_dset, curtaskcla = get_datasets(cur_dataset, dc['path'], num_tasks, nc_first_task,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader.py", line 157, in get_datasets
+    tvmnist_trn = TissueMNIST(root=path, split="train", download=True, as_rgb=True)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/medmnist/dataset.py", line 76, in __init__
+    self.imgs = npz_file[f"{self.split}_images"]
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/numpy/lib/npyio.py", line 253, in __getitem__
+    return format.read_array(bytes,
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/numpy/lib/format.py", line 824, in read_array
+    data = _read_bytes(fp, read_size, "array data")
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/numpy/lib/format.py", line 959, in _read_bytes
+    r = fp.read(size - len(data))
+  File "/opt/conda/envs/prcsl/lib/python3.8/zipfile.py", line 942, in read
+    data = self._read1(n)
+  File "/opt/conda/envs/prcsl/lib/python3.8/zipfile.py", line 1018, in _read1
+    data = self._decompressor.decompress(data, n)
+KeyboardInterrupt

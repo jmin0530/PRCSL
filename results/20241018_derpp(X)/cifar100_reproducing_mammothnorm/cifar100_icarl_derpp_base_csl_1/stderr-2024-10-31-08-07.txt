@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 312, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 260, in main
+    appr.train(t, trn_loader[t], val_loader[t])
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 55, in train
+    self.train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/derpp.py", line 72, in train_loop
+    super().train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning_der.py", line 49, in train_loop
+    self.train_epoch(t, trn_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/derpp.py", line 120, in train_epoch
+    outputs_buff = self.model(torch.stack(buff_images).to(self.device))
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/ACCV_2024/PRCSL/src/networks/network.py", line 66, in forward
+    x = self.model(x)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/ACCV_2024/PRCSL/src/networks/resnet18_cifar.py", line 125, in forward
+    output = self.conv3_x(output)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/ACCV_2024/PRCSL/src/networks/resnet18_cifar.py", line 41, in forward
+    return nn.ReLU(inplace=False)(self.residual_function(x) + self.shortcut(x))
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/nn/modules/activation.py", line 98, in forward
+    return F.relu(input, inplace=self.inplace)
+KeyboardInterrupt

@@ -1,0 +1,20 @@
+Files already downloaded and verified
+Files already downloaded and verified
+num params: 466256
+[(0, 10), (1, 10), (2, 10), (3, 10), (4, 10), (5, 10), (6, 10), (7, 10), (8, 10), (9, 10)]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+| Epoch   1, time=  8.1s | Train: skip eval | Valid: time=  0.2s loss=1.855, TAw acc= 34.0% | *
+| Epoch   2, time=  3.6s | Train: skip eval | Valid: time=  0.2s loss=1.856, TAw acc= 38.0% |
+| Epoch   3, time=  3.5s | Train: skip eval | Valid: time=  0.2s loss=1.638, TAw acc= 43.0% | *
+| Epoch   4, time=  3.4s | Train: skip eval | Valid: time=  0.2s loss=2.223, TAw acc= 36.8% |
+| Epoch   5, time=  3.4s | Train: skip eval | Valid: time=  0.2s loss=1.439, TAw acc= 50.8% | *
+| Epoch   6, time=  3.5s | Train: skip eval | Valid: time=  0.2s loss=1.532, TAw acc= 49.2% |
+| Epoch   7, time=  3.5s | Train: skip eval | Valid: time=  0.2s loss=1.533, TAw acc= 51.6% |
+| Epoch   8, time=  3.4s | Train: skip eval | Valid: time=  0.2s loss=1.387, TAw acc= 53.0% | *
+| Epoch   9, time=  3.4s | Train: skip eval | Valid: time=  0.2s loss=1.330, TAw acc= 56.4% | *
+| Epoch  10, time=  3.5s | Train: skip eval | Valid: time=  0.2s loss=1.311, TAw acc= 55.4% | *
+| Epoch  11, time=  3.4s | Train: skip eval | Valid: time=  0.2s loss=1.701, TAw acc= 50.0% |
+| Epoch  12, time=  3.5s | Train: skip eval | Valid: time=  0.2s loss=1.342, TAw acc= 56.8% |
+| Epoch  13, time=  3.4s | Train: skip eval | Valid: time=  0.2s loss=2.063, TAw acc= 43.8% |

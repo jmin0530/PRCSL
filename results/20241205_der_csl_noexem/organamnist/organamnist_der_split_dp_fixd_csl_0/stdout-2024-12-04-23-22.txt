@@ -1,0 +1,13 @@
+Using downloaded and verified file: ./data/organamnist/organamnist.npz
+Using downloaded and verified file: ./data/organamnist/organamnist.npz
+Taskcla:  [(0, 3), (1, 3), (2, 3), (3, 2)]
+Number of clients each task:  [10, 10, 10, 10]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+ Epoch: 1 | Train: time= 17.9s | Valid: time=  5.9s loss=0.815, TAw acc=  0.0% |
+ Epoch: 2 | Train: time= 10.4s | Valid: time=  5.5s loss=1.254, TAw acc=  0.0% |
+ Epoch: 3 | Train: time= 10.9s | Valid: time=  5.8s loss=0.244, TAw acc=  0.0% |
+ Epoch: 4 | Train: time= 10.9s | Valid: time=  5.7s loss=0.215, TAw acc=  0.0% |
+ Epoch: 5 | Train: time= 10.8s | Valid: time=  5.7s loss=0.156, TAw acc=  0.0% |
+ Epoch: 6 | Train: time= 10.7s | Valid: time=  5.6s loss=0.992, TAw acc=  0.0% |

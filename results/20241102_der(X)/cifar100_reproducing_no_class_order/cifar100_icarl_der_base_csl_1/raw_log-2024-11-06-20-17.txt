@@ -1,0 +1,3 @@
+{"group": "valid", "iter": 1, "name": "loss", "task": 0, "time": "2024-11-06-20-17", "value": 1.8607059383392335}
+{"group": "valid", "iter": 1, "name": "acc", "task": 0, "time": "2024-11-06-20-17", "value": 0.0}
+{"group": "train", "iter": 1, "name": "lr", "task": 0, "time": "2024-11-06-20-17", "value": 0.03}

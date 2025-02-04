@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 295, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main.py", line 243, in main
+    appr.train(t, trn_loader[t], val_loader[t])
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 55, in train
+    self.train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 71, in train_loop
+    super().train_loop(t, trn_loader, val_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/incremental_learning.py", line 72, in train_loop
+    self.train_epoch(t, trn_loader)
+  File "/workspace/ACCV_2024/PRCSL/src/approach/der.py", line 110, in train_epoch
+    batch_exemplars.images = list(np.array(batch_exemplars.images)[choice])
+  File "/opt/conda/envs/prcsl/lib/python3.8/site-packages/torch/tensor.py", line 630, in __array__
+    return self.numpy()
+TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.

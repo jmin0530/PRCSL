@@ -1,0 +1,2 @@
+{"group": "valid", "iter": 1, "name": "loss", "task": 0, "time": "2024-10-24-21-53", "value": 1.891533875465393}
+{"group": "valid", "iter": 1, "name": "acc", "task": 0, "time": "2024-10-24-21-53", "value": 0.0}

@@ -1,0 +1,27 @@
+Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
+Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
+Taskcla:  [(0, 2), (1, 2), (2, 2), (3, 2)]
+Number of clients each task:  [10, 10, 10, 10]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+ Epoch: 1 | Train: time= 13.6s | Valid: time=  4.7s loss=0.345, TAw acc=  0.0% |
+ Epoch: 2 | Train: time=  9.5s | Valid: time=  4.7s loss=0.093, TAw acc=  0.0% |
+num_cls : 2
+num_exemplars:  600
+original_exemplars_per_class:  300
+--------------------------------------------------
+--------------------------------------------------
+| Selected 598 train exemplars, time= 33.2s
+| Constructed 598 exemplars
+Final memory length:  200
+self.logits length and one shape:  200 (8,)
+Previous classes:  [0 1]
+------------------------------------------------------------------------------------------------------------
+>>> Test on task  0 : loss=0.062 | TAw acc=  0.0%, forg=  0.0%| TAg acc=: 98.2%, forg=  0.0% <<<
+Save at ./results/test/bloodmnist_der_split_dp_fixd_csl_0
+************************************************************************************************************
+Task  1
+************************************************************************************************************
+ Epoch: 1 | Train: time=  9.3s | Valid: time=  4.7s loss=0.406, TAw acc=  0.0% |
+ Epoch: 2 | Train: time=  9.2s | Valid: time=  4.8s loss=0.399, TAw acc=  0.0% |

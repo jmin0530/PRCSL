@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/ACCV_2024/PRCSL/src/main_split.py", line 390, in <module>
+    main()
+  File "/workspace/ACCV_2024/PRCSL/src/main_split.py", line 213, in main
+    = get_final_datas(args.datasets, args.num_tasks, args.nc_first_task, \
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader_split.py", line 53, in get_final_datas
+    trn_dset, val_dset, tst_dset, curtaskcla, class_indices = get_datasets(cur_dataset, dc['path'], num_tasks, nc_first_task,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/data_loader_split.py", line 175, in get_datasets
+    all_data, taskcla, class_indices = memd.get_data(trn_data, tst_data, validation=validation,
+  File "/workspace/ACCV_2024/PRCSL/src/datasets/memory_dataset.py", line 136, in get_data
+    data[tt][split]['x'] = np.asarray(data[tt][split]['x'])
+KeyboardInterrupt

@@ -1,0 +1,29 @@
+Using downloaded and verified file: ./data/tissuemnist/tissuemnist.npz
+Using downloaded and verified file: ./data/tissuemnist/tissuemnist.npz
+num params: 466560
+[(0, 2), (1, 2), (2, 2), (3, 2)]
+************************************************************************************************************
+Task  0
+************************************************************************************************************
+| Epoch   1, time=158.2s | Train: skip eval | Valid: time=  3.0s loss=0.404, TAw acc=  0.0% | lr: 0.0300
+| Epoch   2, time=154.7s | Train: skip eval | Valid: time=  3.0s loss=0.383, TAw acc=  0.0% | lr: 0.0300
+| Epoch   3, time=155.4s | Train: skip eval | Valid: time=  3.0s loss=0.457, TAw acc=  0.0% | lr: 0.0300
+| Epoch   4, time=152.7s | Train: skip eval | Valid: time=  3.0s loss=0.361, TAw acc=  0.0% | lr: 0.0300
+| Epoch   5, time=155.2s | Train: skip eval | Valid: time=  3.0s loss=0.373, TAw acc=  0.0% | lr: 0.0300
+| Epoch   6, time=154.5s | Train: skip eval | Valid: time=  2.9s loss=0.351, TAw acc=  0.0% | lr: 0.0300
+| Epoch   7, time=153.7s | Train: skip eval | Valid: time=  2.8s loss=0.377, TAw acc=  0.0% | lr: 0.0300
+| Epoch   8, time=151.9s | Train: skip eval | Valid: time=  2.8s loss=0.343, TAw acc=  0.0% | lr: 0.0300
+| Epoch   9, time=152.9s | Train: skip eval | Valid: time=  3.0s loss=0.336, TAw acc=  0.0% | lr: 0.0300
+| Epoch  10, time=150.4s | Train: skip eval | Valid: time=  2.8s loss=0.375, TAw acc=  0.0% | lr: 0.0300
+| Epoch  11, time=153.5s | Train: skip eval | Valid: time=  2.8s loss=0.329, TAw acc=  0.0% | lr: 0.0300
+| Epoch  12, time=150.8s | Train: skip eval | Valid: time=  2.8s loss=0.319, TAw acc=  0.0% | lr: 0.0300
+| Epoch  13, time=153.3s | Train: skip eval | Valid: time=  3.1s loss=0.321, TAw acc=  0.0% | lr: 0.0300
+| Epoch  14, time=150.7s | Train: skip eval | Valid: time=  3.0s loss=0.325, TAw acc=  0.0% | lr: 0.0300
+| Epoch  15, time=147.6s | Train: skip eval | Valid: time=  2.8s loss=0.335, TAw acc=  0.0% | lr: 0.0300
+| Epoch  16, time=147.5s | Train: skip eval | Valid: time=  3.0s loss=0.315, TAw acc=  0.0% | lr: 0.0300
+| Epoch  17, time=147.6s | Train: skip eval | Valid: time=  2.8s loss=0.310, TAw acc=  0.0% | lr: 0.0300
+| Epoch  18, time=148.3s | Train: skip eval | Valid: time=  3.2s loss=0.374, TAw acc=  0.0% | lr: 0.0300
+| Epoch  19, time=147.1s | Train: skip eval | Valid: time=  2.8s loss=0.304, TAw acc=  0.0% | lr: 0.0300
+| Epoch  20, time=149.0s | Train: skip eval | Valid: time=  2.8s loss=0.299, TAw acc=  0.0% | lr: 0.0300
+| Epoch  21, time=154.2s | Train: skip eval | Valid: time=  2.9s loss=0.300, TAw acc=  0.0% | lr: 0.0300
+| Epoch  22, time=154.6s | Train: skip eval | Valid: time=  2.8s loss=0.297, TAw acc=  0.0% | lr: 0.0300
