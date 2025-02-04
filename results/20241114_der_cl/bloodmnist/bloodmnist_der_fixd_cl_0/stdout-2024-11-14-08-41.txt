@@ -1,8 +1,0 @@
-Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
-Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
-num params: 466848
-[(0, 2), (1, 2), (2, 2), (3, 2)]
-************************************************************************************************************
-Task  0
-************************************************************************************************************
-| Epoch   1, time= 10.0s | Train: skip eval | Valid: time=  0.1s loss=2.026, TAw acc=  0.0% | *

@@ -1,9 +1,0 @@
-Using downloaded and verified file: ./data/pathmnist/pathmnist.npz
-Using downloaded and verified file: ./data/pathmnist/pathmnist.npz
-Taskcla:  [(0, 3), (1, 2), (2, 2), (3, 2)]
-Number of clients each task:  [10, 10, 10, 10]
-************************************************************************************************************
-Task  0
-************************************************************************************************************
- Epoch: 1 | Train: time= 41.3s | Valid: time=  7.8s loss=1.011, TAw acc=  0.0% |
- Epoch: 2 | Train: time= 37.0s |

@@ -1,9 +1,0 @@
-Using downloaded and verified file: ./data/pathmnist/pathmnist.npz
-Using downloaded and verified file: ./data/pathmnist/pathmnist.npz
-num params: 466931
-[(0, 3), (1, 2), (2, 2), (3, 2)]
-************************************************************************************************************
-Task  0
-************************************************************************************************************
-| Epoch   1, time= 79.1s | Train: skip eval | Valid: time=  1.5s loss=3.311, TAw acc=  0.0% | lr: 0.0300
-| Epoch   2, time= 71.9s | Train: skip eval | Valid: time=  1.6s loss=4.574, TAw acc=  0.0% | lr: 0.0300

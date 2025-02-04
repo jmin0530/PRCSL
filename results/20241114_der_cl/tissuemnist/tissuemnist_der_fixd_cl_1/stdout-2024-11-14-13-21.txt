@@ -1,1 +1,0 @@
-Using downloaded and verified file: ./data/tissuemnist/tissuemnist.npz

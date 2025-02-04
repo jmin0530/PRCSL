@@ -1,4 +1,0 @@
-Files already downloaded and verified
-Files already downloaded and verified
-Classifier output dim:  100
-num params: 11789612

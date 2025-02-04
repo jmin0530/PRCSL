@@ -1,3 +1,0 @@
-Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
-Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
-bloodmnist traindataset classes

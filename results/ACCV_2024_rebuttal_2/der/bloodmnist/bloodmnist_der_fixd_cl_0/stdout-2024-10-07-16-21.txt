@@ -1,7 +1,0 @@
-Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
-Using downloaded and verified file: ./data/bloodmnist/bloodmnist.npz
-num params: 466256
-[(0, 2), (1, 2), (2, 2), (3, 2)]
-************************************************************************************************************
-Task  0
-************************************************************************************************************
